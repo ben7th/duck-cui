@@ -1,0 +1,133 @@
+@import './bubbleme';
+
+@keyframes loadingCircle {
+  to {
+    background-color: #e0e0e0;
+    transform: scale(0.6);
+  }
+  from {
+    background-color: #8d8d8d;
+    transform: scale(1);
+  }
+}
+
+.chatbubble {
+  box-sizing: border-box;
+  max-width: 510px;
+}
+
+.chatbubble.from-AI {
+  @include bubble-ai;
+
+  &.type-MDText {
+    h2 {
+      margin: 0;
+    }
+  }
+
+  &.type-Loading {
+    $line-height: 42px;
+    height: $line-height + 20px + 20px;
+    display: flex;
+    align-items: center;
+  
+    .c1, .c2, .c3 {
+      width: 18px; height: 18px;
+      border-radius: 100%;
+      margin-right: 6px;
+    }
+    
+    .c1 { animation: loadingCircle .8s linear .0s infinite; }
+    .c2 { animation: loadingCircle .8s linear .2s infinite; }
+    .c3 { animation: loadingCircle .8s linear .4s infinite; }
+    .c3 { margin-right: 0; }
+  }
+
+  &.type-Gif {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    img {
+      display: block;
+      max-width: 250px;
+    }
+  }
+
+  &.type-Img {
+    padding: 0;
+    overflow: hidden;
+
+    img {
+      display: block;
+      // max-width: 250px;
+      width: 510px;
+      cursor: pointer;
+    }
+  }
+
+  &.type-Video {
+    padding: 0;
+    overflow: hidden;
+    video {
+      display: block;
+      max-width: 500px;
+    }
+  }
+
+  &.type-Audio {
+    padding: 0;
+    overflow: hidden;
+    border-radius: 10rem;
+    audio {
+      display: block;
+      max-width: 500px;
+    }
+  }
+
+  &.type-Link {
+    a {
+      color: #1aad19;
+    }
+  }
+
+  &.type-WebCard {
+    border-radius: 15px;
+    a {
+      color: #333;
+      text-decoration: none;
+      div:nth-child(1) {
+        margin-bottom: 10px;
+        font-size: 28px;
+      }
+      div:nth-child(2) {
+        font-size: 26px;
+        color: #999;
+        padding-right: 100px;
+        position: relative;
+        i {
+          position: absolute;
+          width: 80px; height: 80px;
+          background-color: #666;
+          top: 0; right: 0;
+        }
+      }
+    }
+  }
+
+  &.type-MsgPrompt {
+    color: white;
+    font-size: 30px;
+    background-color: #999;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin: 10px;
+  }
+}
+
+.chatbubble.from-ME {
+  @include bubble-me;
+
+  &.type-RPC {
+    background-color: #0f89d4;
+  }
+}

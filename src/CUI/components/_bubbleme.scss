@@ -1,0 +1,21 @@
+@mixin bubble {
+  font-size: 34px;
+  padding: 20px 30px;
+  box-shadow: 1px 1px 1px rgba(black, 0.2), 0px 0px 1px rgba(black, 0.1);
+  line-height: 42px;
+  word-break: break-all;
+}
+
+@mixin bubble-ai {
+  @include bubble;
+  background-color: white;
+  color: black;
+  border-radius: 40px 15px;
+}
+
+@mixin bubble-me {
+  @include bubble;
+  background-color: #41d100;
+  color: white;
+  border-radius: 15px 40px;
+}

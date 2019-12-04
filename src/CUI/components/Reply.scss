@@ -1,0 +1,38 @@
+@import './bubbleme';
+
+.reply {
+  @include bubble-me;
+  display: inline-block;
+  margin: 0 12px 18px;
+  box-shadow: 0 10px 20px rgba(black, 0.1);
+  cursor: pointer;
+
+  &.rpc {
+    background-color: #0f89d4;
+  }
+
+  &.flyup {
+    transition: transform 150ms ease-in;
+  }
+
+  &.fadedown {
+    transition: opacity 200ms ease-out;
+    opacity: 0;
+  }
+}
+
+.mreply {
+  @include bubble-me;
+  display: inline-block;
+  margin: 0 12px 18px;
+  box-shadow: 0 10px 20px rgba(black, 0.1);
+  cursor: pointer;
+  opacity: 0.6;
+  transform: scale(0.9);
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+
+  &.selected {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

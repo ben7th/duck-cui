@@ -1,0 +1,15 @@
+.chatlist {
+  padding: 30px;
+  padding-bottom: 300px;
+  position: relative;
+
+  ._anchor {
+    width: 20px; height: 20px;
+    background-color: red;
+    position: absolute;
+    right: 30px;
+    margin-top: -20px;
+    pointer-events: none;
+    opacity: 0;
+  }
+}

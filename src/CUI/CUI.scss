@@ -1,0 +1,9 @@
+@import '../css/funcs';
+
+.CUI {
+  @include fillBox;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 35px;
+  // background-color: #555;
+}
