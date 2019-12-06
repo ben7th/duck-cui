@@ -1,6 +1,6 @@
 import React from 'react'
 
-import css from './DemoPage.scss'
+import css from './Basic.scss'
 
 import CUI from '../CUI/CUI'
 import Timeout from 'await-timeout'
@@ -10,12 +10,14 @@ import Text from '../CUI/components-new/says/Text'
 import Choices from '../CUI/components-new/says/Choices'
 import CoverChoices from '../CUI/components-new/covers/Choices'
 
-export default class DemoPage extends React.Component {
+export default class Basic extends React.Component {
   render () {
     return <div className={ css.DemoPage }>
       <div className={ css.phone }>
         <div className={ css.phoneinner }>
-          <CUI ref={ $node => this.cuic = $node.cuic }/>
+          <CUI ref={ $node => {
+            if ($node) { this.cuic = $node.cuic }
+          } }/>
         </div>
       </div>
       <div className={ css.control }>

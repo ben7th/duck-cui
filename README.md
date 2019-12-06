@@ -2,6 +2,13 @@
 
 ## 迭代记录
 
+### DAY3
+
+- 引入 react-router-dom 组件，参考：<https://github.com/mrdulin/blog/issues/42>  
+  文档：<https://www.jianshu.com/p/97e4af32811a>
+- 调整 webpack 配置，以 fix 路径刷新加载和前进回退问题
+- 实现了一个 demo 索引页面
+
 ### DAY2
 
 - 增加接口描述文档，添加了 AppendAble 和 CoverAble 的描述

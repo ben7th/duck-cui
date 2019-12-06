@@ -1,4 +1,4 @@
-import DemoPage from './demo/DemoPage'
+import DemoPage from './demo/index'
 
 export {
   DemoPage
