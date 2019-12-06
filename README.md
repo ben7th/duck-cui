@@ -2,14 +2,20 @@
 
 ## 迭代记录
 
+### DAY2
+
+- 增加接口描述文档，添加了 AppendAble 和 CoverAble 的描述
+- 实现 AppendAble 和 CoverAble 的基础代码
+
 ### DAY1
 
-- 打包方式，参考 <https://webpack.docschina.org/loaders/sass-loader/>
+- 打包方式，参考 <https://juejin.im/post/5d6760b3e51d453b8b5fa60b>
 - 自己进行了一些修改，引入了：
-  - sass-loader
+  - sass-loader <https://webpack.docschina.org/loaders/sass-loader/>
   - filer-loader, 参考 <https://webpack.js.org/guides/asset-management/>
   - 调整了 css-loader 的 localIdentName 配置，参考 <https://www.npmjs.com/package/css-loader>
   - 增加了 @babel/plugin-proposal-class-properties, 以支持 class 下的 static 语法
+  - 引入 polyfill, 参考 <https://github.com/babel/babel/issues/8829>
 - 包装了控制器层 cuic，以便对 CUI 实现精细的控制
 - 包装了若干 cuic 上的控制方法
 - 实现了一个测试页

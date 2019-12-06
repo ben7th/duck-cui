@@ -11,6 +11,20 @@ export default class CUIC {
     this.$MRI = $MRI
   }
 
+  // 添加 AppendAble 到 cui
+  async append (appendAble) {
+    let { chatitems } = this.$MRI.state
+    chatitems.push(appendAble)
+    this.$MRI.setState({ chatitems })
+  }
+
+  // 添加 CoverAble 到 cui
+  async cover (coverAble) {
+    let { coverItems } = this.$MRI.state
+    coverItems.push(coverAble)
+    this.$MRI.setState({ coverItems })
+  }
+
   // 显示 loading 节点
   appendLoading () {
     let { chatitems } = this.$MRI.state

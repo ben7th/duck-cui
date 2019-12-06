@@ -1,0 +1,22 @@
+.Choices {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  pointer-events: none;
+
+  button {
+    pointer-events: all;
+    display: block;
+    background-color: #41d100;
+    color: white;
+    padding: 1.2rem 2rem;
+    border-radius: 1rem 2.5rem;
+    margin-right: 1rem;
+    font-size: 2rem;
+    border: 0 none;
+    outline: none;
+    cursor: pointer;
+  }
+}

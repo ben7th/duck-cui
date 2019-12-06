@@ -5,6 +5,8 @@ import CUIBackground from './CUIBackground'
 
 // 需要重构
 import ChatList from './components/ChatList'
+import CoverItems from './components-new/CoverItems'
+
 import Replies from './components/Replies'
 import MReplies from './components/MReplies'
 import ConditionConfirm from './components/ConditionConfirm'
@@ -12,12 +14,14 @@ import Wheel from './components/Wheel'
 import Bubble from './components/Bubble'
 
 // 需要重构
-import CUIC from '../CUIC/CUIC'
+import CUIContext from './context/CUIContext'
 
 export default class CUI extends React.Component {
   state = {
     chatitems: [],
     replies: [],
+
+    coverItems: [],
 
     // 多选
     mReplies: [],
@@ -37,6 +41,7 @@ export default class CUI extends React.Component {
       <CUIBackground />
       <div className={ css.CUI } id='MRI-Scroller'>
         <ChatList chatitems={ this.state.chatitems } />
+        <CoverItems items={ this.state.coverItems } />
 
         <Replies 
           replies={ this.state.replies }
@@ -67,6 +72,6 @@ export default class CUI extends React.Component {
   }
 
   componentWillMount () {
-    this.cui = new CUIC({ $MRI: this })
+    this.cuic = new CUIContext({ $MRI: this })
   }
 }

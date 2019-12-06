@@ -1,0 +1,15 @@
+.Choices {
+  display: flex;
+  button {
+    display: block;
+    background-color: #41d100;
+    color: white;
+    padding: 1.2rem 2rem;
+    border-radius: 1rem 2.5rem;
+    margin-right: 1rem;
+    font-size: 2rem;
+    border: 0 none;
+    outline: none;
+    cursor: pointer;
+  }
+}
