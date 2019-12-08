@@ -65,7 +65,7 @@ export default class CUIC {
 
   _scrollToBottom () {
     let scroller = Scroll.animateScroll
-    console.log(scroller)
+    // console.log(scroller)
     scroller.scrollToBottom({
       containerId: 'MRI-Scroller'
     })

@@ -2,6 +2,11 @@
 
 ## 迭代记录
 
+### DAY4
+
+- 完善了 demo 索引页面
+- 进一步修正了 demo 页面刷新的问题
+
 ### DAY3
 
 - 引入 react-router-dom 组件，参考：<https://github.com/mrdulin/blog/issues/42>  

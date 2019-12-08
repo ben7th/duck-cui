@@ -1,0 +1,34 @@
+$phoneWidth: 375px;
+$phoneHeight: 600px;
+
+.PhoneUI {
+  width: $phoneWidth; 
+  height: $phoneHeight;
+
+  background-color: #333;
+  position: relative;
+  border-radius: 1rem;
+  padding: 1rem 1rem 2rem;
+
+  &::before {
+    content: "";
+    width: .8rem;
+    height: .8rem;
+    background-color: white;
+    border-radius: 100%;
+    position: absolute;
+    bottom: .6rem;
+    left: 50%;
+    margin-left: -.4rem;
+  }
+
+  .phoneinner {
+    width: $phoneWidth * 2; 
+    height: $phoneHeight * 2;
+    background-color: rgba(white, 0.2);
+    overflow: hidden;
+    position: relative;
+    transform-origin: 0 0;
+    transform: scale(0.5);
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import avatar from './assets/sibbay-avatar.png'
+import avatar from './assets/duck-avatar.png'
 import css from './SibbayAvatar.scss'
 
 export default class extends React.Component {
