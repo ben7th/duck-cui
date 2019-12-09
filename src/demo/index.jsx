@@ -6,7 +6,8 @@ import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 import { 
   BasicPage,
-  LoadingPage
+  LoadingPage,
+  TextPage
 } from './pages/index'
 
 import Markdown from 'markdown-to-jsx'
@@ -43,7 +44,7 @@ class Index extends React.Component {
           <span>AppendAble</span>
           <ul>
             <li><Link to='/AppendAble/Loading'>Loading</Link></li>
-            <li><span>Text</span></li>
+            <li><Link to='/AppendAble/Text'>Text</Link></li>
             <li><span>Image</span></li>
             <li><span>Audio</span></li>
             <li><span>Video</span></li>
@@ -71,6 +72,7 @@ class Index extends React.Component {
           </Route>
           <Route exact path='/basic' component={ BasicPage } />
           <Route exact path='/AppendAble/Loading' component={ LoadingPage } />
+          <Route exact path='/AppendAble/Text' component={ TextPage } />
         </div>
       </div>
     </div>

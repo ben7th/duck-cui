@@ -16,7 +16,7 @@
     box-shadow: 1px 1px 1px rgba(black, 0.2), 0px 0px 1px rgba(black, 0.1);
     line-height: $ChatBubbleLineHeight;
     word-break: break-all;
-    background-color: white;
+    background-color: $ChatBubbleBackgroundColor;
     color: $ChatBubbleTextColor;
     border-radius: $ChatBubblBorderRadius;
   }
@@ -28,12 +28,12 @@
   &.side-local {
     flex-direction: row-reverse;
     img {
-      display: none;
+      // display: none;
     }
     .box {
-      background-color: #41d100;
-      color: white;
-      border-radius: 1rem 2.5rem;
+      background-color: $ChatBubbleBackgroundColorLocal;
+      color: $ChatBubbleTextColorLocal;
+      border-radius: $ChatBubblBorderRadiusReverse;
     }
   }
 }
