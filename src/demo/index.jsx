@@ -2,12 +2,13 @@ import React from 'react'
 
 import css from './index.scss'
 
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Link, NavLink } from 'react-router-dom'
 
 import { 
   BasicPage,
   LoadingPage,
-  TextPage
+  TextPage,
+  ImagePage
 } from './pages/index'
 
 import Markdown from 'markdown-to-jsx'
@@ -34,36 +35,46 @@ const md = `
 - [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx)
 `
 
+const L = (props) => {
+  return <NavLink exact to={ props.to } activeClassName={ css.linkActive }>{ props.children }</NavLink>
+}
+
 class Index extends React.Component {
   render () {
     return <div className={ css.index }>
       <ul className={ css.side }>
-        <li><Link to='/'>介绍</Link></li>
-        <li><Link to='/basic'>基本演示</Link></li>
+        <li><L to='/'>介绍</L></li>
+        <li><L to='/basic'>基本演示</L></li>
         <li>
           <span>AppendAble</span>
           <ul>
-            <li><Link to='/AppendAble/Loading'>Loading</Link></li>
-            <li><Link to='/AppendAble/Text'>Text</Link></li>
-            <li><span>Image</span></li>
-            <li><span>Audio</span></li>
-            <li><span>Video</span></li>
-            <li><span>Link</span></li>
             <li><span>Tip</span></li>
-            <li><span>Card</span></li>
-            <li><span>MarkdownText</span></li>
+            <li>
+              <span>SayAble</span>
+              <ul>
+                <li><L to='/AppendAble/Loading'>Loading</L></li>
+                <li><L to='/AppendAble/Text'>Text</L></li>
+                <li><L to='/AppendAble/Image'>Image</L></li>
+                <li><span>Audio</span></li>
+                <li><span>Video</span></li>
+                <li><span>Link</span></li>
+                <li><span>Card</span></li>
+                <li><span>MarkdownText</span></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li>
-          <Link to='/'>CoverAble</Link>
+          <span>CoverAble</span>
           <ul>
-            <li><Link to='/'>Input</Link></li>
-            <li><Link to='/'>Choices</Link></li>
-            <li><Link to='/'>Wheel</Link></li>
+            <li><span>Input</span></li>
+            <li><span>Choices</span></li>
+            <li><span>Wheel</span></li>
+            <li><span>ImagePreviewer</span></li>
           </ul>
         </li>
-        <li><Link to='/'>Loader</Link></li>
-        <li><Link to='/'>Event Binding</Link></li>
+        <li><span>Loader</span></li>
+        <li><span>Events</span></li>
       </ul>
       <div className={ css.main }>
         <div className={ css.content }>
@@ -71,8 +82,10 @@ class Index extends React.Component {
             <Markdown>{ md }</Markdown>
           </Route>
           <Route exact path='/basic' component={ BasicPage } />
+
           <Route exact path='/AppendAble/Loading' component={ LoadingPage } />
           <Route exact path='/AppendAble/Text' component={ TextPage } />
+          <Route exact path='/AppendAble/Image' component={ ImagePage } />
         </div>
       </div>
     </div>

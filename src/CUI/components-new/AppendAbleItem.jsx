@@ -15,9 +15,9 @@ export default class AppendAbleItem extends React.Component {
     }
 
     if (x.base === 'SayAble') {
-      let { side } = x
+      let { side, typeName } = x
       
-      return <div className={ `${css.SayAble} ${css[`side-${side}`]}` }>
+      return <div className={ `${css.SayAble} ${css[`side-${side}`]} ${css[`type-${typeName}`]}` }>
         <SibbayAvatar side={ side } />
         <div className={ css.box }>
           { React.createElement(x.component, x.props) }
