@@ -1,14 +1,17 @@
+// $c: #28a745;
+$c: #d08027;
+
 .Button {
-  background-color: #28a745;
+  background-color: $c;
   color: white;
   border: 0 none;
   border-radius: .3rem;
   padding: .5rem 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   outline: none;
   &:hover {
-    background-color: lighten(#28a745, 5%);
+    background-color: lighten($c, 5%);
   }
   display: block;
   margin-bottom: .5rem;

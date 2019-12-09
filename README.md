@@ -2,6 +2,13 @@
 
 ## 迭代记录
 
+### DAY5
+
+- 在继承体系下逐个实现组件，在此过程中撰写文档的示例页面和优化代码结构
+- 引入函数库 [lodash](https://www.lodashjs.com/) 来简化代码
+- 引入 [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx) 来简化文档撰写
+- 已知问题：chrome 在开启硬件加速时，存在动画与 setTimeout 冲突的问题。具体表现为在 setTimeout 期间，动画有时不渲染
+
 ### DAY4
 
 - 完善了 demo 索引页面

@@ -1,5 +1,6 @@
-$phoneWidth: 375px;
-$phoneHeight: 600px;
+$phoneWidth: 300px;
+$phoneHeight: 400px;
+$pixel: 1;
 
 .PhoneUI {
   width: $phoneWidth; 
@@ -23,12 +24,13 @@ $phoneHeight: 600px;
   }
 
   .phoneinner {
-    width: $phoneWidth * 2; 
-    height: $phoneHeight * 2;
+    width: $phoneWidth * $pixel; 
+    height: $phoneHeight * $pixel;
     background-color: rgba(white, 0.2);
     overflow: hidden;
     position: relative;
     transform-origin: 0 0;
-    transform: scale(0.5);
+    transform: scale(1 / $pixel);
+    border-radius: .5rem;
   }
 }

@@ -5,17 +5,22 @@ import Scroll from 'react-scroll'
 // https://www.npmjs.com/package/react-scroll
 
 import MarkdownIt from 'markdown-it'
+import Timeout from 'await-timeout'
+import _array from 'lodash/array'
 
-export default class CUIC {
+export default class CUIContext {
   constructor ({ $MRI }) {
     this.$MRI = $MRI
   }
+
+  // 新方法
 
   // 添加 AppendAble 到 cui
   async append (appendAble) {
     let { chatitems } = this.$MRI.state
     chatitems.push(appendAble)
     this.$MRI.setState({ chatitems })
+    return this
   }
 
   // 添加 CoverAble 到 cui
@@ -23,38 +28,46 @@ export default class CUIC {
     let { coverItems } = this.$MRI.state
     coverItems.push(coverAble)
     this.$MRI.setState({ coverItems })
-  }
-
-  // 显示 loading 节点
-  appendLoading () {
-    let { chatitems } = this.$MRI.state
-    chatitems.push(ChatItemBuilder.AI.Loading())
-    this.$MRI.setState({ chatitems })
-    this._scrollToBottom()
-  }
-
-  // 移除所有 loading 节点
-  removeLoading () {
-    let { chatitems } = this.$MRI.state
-    chatitems = chatitems.filter(x => x.type !== 'Loading')
-    this.$MRI.setState({ chatitems })
     return this
   }
 
-  // 移除最后一个节点
-  removeLastNode () {
+  // 移除最后一个符合条件的节点
+  async removeLast ({ typeName }) {
     let { chatitems } = this.$MRI.state
-    chatitems.pop()
+    let idx = _array.findLastIndex(chatitems, (x) => {
+      if (!typeName) { return true }
+      return x.typeName === typeName
+    })
+    _array.pullAt(chatitems, idx)
     this.$MRI.setState({ chatitems })
-    this._scrollToBottom()
   }
 
-  // 移除所有节点
-  clearAllNodes () {
-    this.$MRI.setState({ chatitems: [] })
-    this._scrollToBottom()
-    return this
+  async removeAll (condition) {
+    let { chatitems } = this.$MRI.state
+
+    if (condition) {
+      let { typeName } = condition
+      _array.remove(chatitems, (x) => {
+        return x.typeName === typeName
+      })
+    }
+
+    if (!condition) {
+      chatitems = []
+    }
+
+    this.$MRI.setState({ chatitems })
   }
+
+  async waitFor ({ duration }) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve()
+      }, duration)
+    })
+  }
+
+  // ------- 旧方法
 
   _appendChatItems (chatItem) {
     let { chatitems } = this.$MRI.state

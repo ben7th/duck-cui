@@ -1,0 +1,33 @@
+$base: 16px;
+
+// 头像的宽高
+$AvatarSize: $base * 2;
+// 头像与对话气泡的间隔
+$AvatarBubbleMargin: $base * 1;
+
+
+/* 对话气泡 */
+
+// 对话气泡的下间隔
+$ChatBubbleMarginBottom: $base * 1;
+// 对话气泡文字大小
+$ChatBubbleFontSize: $base * 1;
+// 对话气泡 Padding
+$ChatBubblePadding: $base * 0.5 $base * 1;
+// 对话气泡文字行高
+$ChatBubbleLineHeight: $base * 1.5;
+// 对话气泡圆角大小
+$ChatBubblBorderRadius: $base * 1 $base * 0.5;
+// 对话气泡文字颜色
+$ChatBubbleTextColor: #333;
+
+// Loading 气泡的内部高度
+$LoadingBubbleHeight: $ChatBubbleLineHeight;
+
+/* AppendAble */
+
+// Tip 的样式
+$TipFontSize: 14px;
+$TipBorderRadius: $base * 0.5;
+$tipBackgroundColor: #999;
+$tipPadding: $base * 0.25 $base * 0.5;

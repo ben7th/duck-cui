@@ -16,7 +16,7 @@ export default class Tip extends AppendAble {
     this.props = props
   }
 
-  get name () {
+  get typeName () {
     return 'Tip'
   }
 }

@@ -2,8 +2,8 @@ export default class AppendAble {
   constructor () {
     this.base = 'AppendAble'
 
-    if (!this.name) {
-      throw new Error('AppendAble.name must be set.')
+    if (!this.typeName) {
+      throw new Error('AppendAble.typeName must be set.')
     }
   }
 }

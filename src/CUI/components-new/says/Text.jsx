@@ -16,7 +16,7 @@ export default class Text extends SayAble {
     this.props = props
   }
 
-  get name () {
+  get typeName () {
     return 'Text'
   }
 }

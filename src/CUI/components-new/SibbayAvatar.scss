@@ -1,0 +1,9 @@
+@import './css/vars';
+
+.sibbayAvatar {
+  width: $AvatarSize; 
+  height: $AvatarSize;
+
+  border-radius: 100%;
+  margin-right: $AvatarBubbleMargin;
+}

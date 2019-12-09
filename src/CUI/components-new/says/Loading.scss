@@ -1,0 +1,29 @@
+@import '../css/vars';
+
+@keyframes loadingCircle {
+  to {
+    background-color: #e0e0e0;
+    transform: scale(0.6);
+  }
+  from {
+    background-color: #8d8d8d;
+    transform: scale(1);
+  }
+}
+
+.Loading {
+  display: flex;
+  align-items: center;
+  height: $LoadingBubbleHeight;
+
+  .c1, .c2, .c3 {
+    width: .5rem; height: .5rem;
+    border-radius: 100%;
+    margin-right: .5rem;
+  }
+  
+  .c1 { animation: loadingCircle .8s linear .0s infinite; }
+  .c2 { animation: loadingCircle .8s linear .2s infinite; }
+  .c3 { animation: loadingCircle .8s linear .4s infinite; }
+  .c3 { margin-right: 0; }
+}

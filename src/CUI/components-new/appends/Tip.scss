@@ -1,12 +1,14 @@
+@import '../css/vars';
+
 .Tip {
   display: flex;
   justify-content: center;
   
   span {
     color: white;
-    font-size: 2rem;
-    background-color: #999;
-    border-radius: 1rem;
-    padding: .6rem 1rem;
+    font-size: $TipFontSize;
+    background-color: $tipBackgroundColor;
+    border-radius: $TipBorderRadius;
+    padding: $tipPadding;
   }
 }

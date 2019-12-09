@@ -1,6 +1,6 @@
 import React from 'react'
 
-import css from './Button.scss'
+import css from './DemoButton.scss'
 
 export default class Button extends React.Component {
   render () {
@@ -8,6 +8,6 @@ export default class Button extends React.Component {
   }
 
   componentDidMount () {
-    console.log(this.props)
+    // console.log(this.props)
   }
 }

@@ -1,6 +1,6 @@
 .chatlist {
-  padding: 30px;
-  padding-bottom: 300px;
+  padding: 1rem;
+  // padding-bottom: 300px;
   position: relative;
 
   ._anchor {
@@ -11,43 +11,5 @@
     margin-top: -20px;
     pointer-events: none;
     opacity: 0;
-  }
-}
-
-.AppendAble {
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.SayAble {
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 1rem;
-
-  .box {
-    font-size: 2rem;
-    padding: 1.2rem 2rem;
-    box-shadow: 1px 1px 1px rgba(black, 0.2), 0px 0px 1px rgba(black, 0.1);
-    line-height: 2.5rem;
-    word-break: break-all;
-    background-color: white;
-    color: black;
-    border-radius: 2.5rem 1rem;
-  }
-
-  &.side-remote {
-    flex-direction: row;
-  }
-
-  &.side-local {
-    flex-direction: row-reverse;
-    img {
-      display: none;
-    }
-    .box {
-      background-color: #41d100;
-      color: white;
-      border-radius: 1rem 2.5rem;
-    }
   }
 }

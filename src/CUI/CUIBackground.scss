@@ -5,14 +5,14 @@
 
   .bg {
     @include fillBox;
-    background: linear-gradient(#e8f5fd, #b8def1);
+    background: linear-gradient($BackgroundColorTop, $BackgroundColorBottom);
     pointer-events: none;
   }
   
   .topshadow {
     background: linear-gradient(rgba(black, 0.6), transparent);
     position: absolute;
-    top:0; left:0; right:0; height: .6rem;
+    top:0; left:0; right:0; height: .3rem;
     z-index: 99;
     pointer-events: none;
   }

@@ -4,8 +4,34 @@ import css from './index.scss'
 
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
-import Basic from './Basic'
-import LoadingDemo from './LoadingDemo'
+import { 
+  BasicPage,
+  LoadingPage
+} from './pages/index'
+
+import Markdown from 'markdown-to-jsx'
+
+const md = `
+# Duck CUI
+
+一个 CUI 支持框架。提供多种 CUI 所需要的能力。  
+使用极其简洁的代码和编程方式，帮助 CUI 快速适配业务逻辑，实现所需场景。
+
+## 使用方法
+
+### 安装引用
+
+### 在网页中使用
+
+### 在微信小程序中使用
+
+## 兼容性说明
+
+## 用到的库，感谢！
+
+- [lodash](https://www.lodashjs.com/)  
+- [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx)
+`
 
 class Index extends React.Component {
   render () {
@@ -14,17 +40,17 @@ class Index extends React.Component {
         <li><Link to='/'>介绍</Link></li>
         <li><Link to='/basic'>基本演示</Link></li>
         <li>
-          <Link to='/'>AppendAble</Link>
+          <span>AppendAble</span>
           <ul>
             <li><Link to='/AppendAble/Loading'>Loading</Link></li>
-            <li><Link to='/'>Text</Link></li>
-            <li><Link to='/'>Image</Link></li>
-            <li><Link to='/'>Audio</Link></li>
-            <li><Link to='/'>Video</Link></li>
-            <li><Link to='/'>Link</Link></li>
-            <li><Link to='/'>Tip</Link></li>
-            <li><Link to='/'>Card</Link></li>
-            <li><Link to='/'>MarkdownText</Link></li>
+            <li><span>Text</span></li>
+            <li><span>Image</span></li>
+            <li><span>Audio</span></li>
+            <li><span>Video</span></li>
+            <li><span>Link</span></li>
+            <li><span>Tip</span></li>
+            <li><span>Card</span></li>
+            <li><span>MarkdownText</span></li>
           </ul>
         </li>
         <li>
@@ -41,16 +67,10 @@ class Index extends React.Component {
       <div className={ css.main }>
         <div className={ css.content }>
           <Route exact path='/'>
-            <h1>Duck CUI</h1>
-            <p>一个 CUI 支持框架。提供多种能力帮助 CUI 快速适配业务逻辑，实现所需场景。</p>
-            <h2>使用方法</h2>
-            <h3>安装引用</h3>
-            <h3>在网页中使用</h3>
-            <h3>在微信小程序中使用</h3>
-            <h2>兼容性说明</h2>
+            <Markdown>{ md }</Markdown>
           </Route>
-          <Route exact path='/basic' component={ Basic } />
-          <Route exact path='/AppendAble/Loading' component={ LoadingDemo } />
+          <Route exact path='/basic' component={ BasicPage } />
+          <Route exact path='/AppendAble/Loading' component={ LoadingPage } />
         </div>
       </div>
     </div>
