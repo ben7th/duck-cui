@@ -2,13 +2,14 @@ import React from 'react'
 
 import css from './index.scss'
 
-import { BrowserRouter, Route, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter, Route, NavLink } from 'react-router-dom'
 
 import { 
   BasicPage,
   LoadingPage,
   TextPage,
-  ImagePage
+  MarkdownTextPage,
+  ImagePage,
 } from './pages/index'
 
 import Markdown from 'markdown-to-jsx'
@@ -53,13 +54,17 @@ class Index extends React.Component {
               <span>SayAble</span>
               <ul>
                 <li><L to='/AppendAble/Loading'>Loading</L></li>
-                <li><L to='/AppendAble/Text'>Text</L></li>
+                <li>
+                  <L to='/AppendAble/Text'>Text</L>
+                  <ul>
+                    <li><L to='/AppendAble/MarkdownText'>MarkdownText</L></li>
+                  </ul>
+                </li>
                 <li><L to='/AppendAble/Image'>Image</L></li>
                 <li><span>Audio</span></li>
                 <li><span>Video</span></li>
                 <li><span>Link</span></li>
                 <li><span>Card</span></li>
-                <li><span>MarkdownText</span></li>
               </ul>
             </li>
           </ul>
@@ -85,6 +90,7 @@ class Index extends React.Component {
 
           <Route exact path='/AppendAble/Loading' component={ LoadingPage } />
           <Route exact path='/AppendAble/Text' component={ TextPage } />
+          <Route exact path='/AppendAble/MarkdownText' component={ MarkdownTextPage } />
           <Route exact path='/AppendAble/Image' component={ ImagePage } />
         </div>
       </div>

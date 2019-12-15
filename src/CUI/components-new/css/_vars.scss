@@ -15,7 +15,7 @@ $ChatBubbleFontSize: $base * 1;
 // 对话气泡 Padding
 $ChatBubblePadding: $base * 0.5 $base * 1;
 // 对话气泡文字行高
-$ChatBubbleLineHeight: $base * 1.5;
+$ChatBubbleLineHeight: 1.5;
 // 对话气泡圆角大小
 $ChatBubblBorderRadius: $base * 1 $base * 0.5;
 $ChatBubblBorderRadiusReverse: $base * 0.5 $base * 1;
@@ -27,7 +27,7 @@ $ChatBubbleBackgroundColor: #fff;
 $ChatBubbleBackgroundColorLocal: #41d100;
 
 // Loading 气泡的内部高度
-$LoadingBubbleHeight: $ChatBubbleLineHeight;
+$LoadingBubbleHeight: $base * 1.5; // 数值上等于 $ChatBubbleLineHeight
 
 /* AppendAble */
 

@@ -1,8 +1,11 @@
+@import '../../../docvars';
+
 .DemoBox {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   display: flex;
-  border-top: solid 1px #ddd;
+  border: $DocumentBlockBorderStyle;
+  background-color: $DocumentBlockBackgroundColor;
+  padding: 1rem;
+  margin-bottom: 2rem;
   .control {
     padding-left: 2rem;
   }
