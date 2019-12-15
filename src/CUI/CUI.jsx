@@ -41,9 +41,9 @@ export default class CUI extends React.Component {
       <CUIBackground />
       <div className={ css.CUI } id='MRI-Scroller'>
         <ChatList chatitems={ this.state.chatitems } />
-        <CoverItems items={ this.state.coverItems } />
+        <CoverItems coverItems={ this.state.coverItems } />
 
-        <Replies 
+        {/* <Replies 
           replies={ this.state.replies }
           $MRI={ this }
         />
@@ -66,7 +66,7 @@ export default class CUI extends React.Component {
         <Bubble 
           bubble={ this.state.bubble }
           $MRI={ this }
-        />
+        /> */}
       </div>
     </>
   }

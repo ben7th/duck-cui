@@ -41,7 +41,11 @@ const devConfig = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|eot|woff|ttf|woff2)$/,
+        use: [ 'file-loader' ],
+      },
+      {
+        test: /\.(eot|woff|woff2|ttf|svg)$/,
         use: [ 'file-loader' ],
       },
     ]

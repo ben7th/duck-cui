@@ -3,6 +3,7 @@ import LoadingPage from './LoadingPage'
 import TextPage from './TextPage'
 import MarkdownTextPage from './MarkdownTextPage'
 import ImagePage from './ImagePage'
+import InputPage from './InputPage'
 
 export {
   BasicPage,
@@ -10,4 +11,5 @@ export {
   TextPage,
   MarkdownTextPage,
   ImagePage,
+  InputPage,
 }

@@ -2,8 +2,8 @@ export default class CoverAble {
   constructor () {
     this.base = 'CoverAble'
 
-    if (!this.name) {
-      throw new Error('CoverAble.name must be set.')
+    if (!this.typeName) {
+      throw new Error('CoverAble.typeName must be set.')
     }
   }
 }

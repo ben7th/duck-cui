@@ -4,6 +4,10 @@
 
 ### DAY10
 
+- 实现 Input
+- 引入 react-textarea-autosize
+- 引入 iconfont, 调整 webpack 配置，增加 `/\.(eot|woff|woff2|ttf|svg)$/` 的打包
+
 ### DAY6
 
 - 初步实现了基本的 markdown 支持

@@ -1,0 +1,53 @@
+@import '../css/vars';
+
+.Input {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: $inputBackgroundColor;
+
+  display: grid;
+  grid-template-columns: 1fr $inputButtonWidth;
+  padding: .3rem;
+
+  .inputarea {
+    padding: $InputPadding;
+    textarea {
+      width: 100%;
+      font-size: $InputFontSize;
+      resize: none;
+      border: 0 none;
+      padding: 0;
+      // background-color: #ddd;
+      background-color: transparent;
+      outline: none;
+      line-height: $InputLineHeight;
+    }
+  }
+
+
+  .btnarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button.send {
+      background-color: $InputSendBtnBackgroundColor;
+      color: $InputSendBtnColor;
+      border: 0 none;
+      outline: none;
+      cursor: pointer;
+      width: $InputSendBtnSize; height: $InputSendBtnSize;
+      border-radius: 100%;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color ease .3s;
+
+      &:disabled {
+        background-color: rgba(grayscale($InputSendBtnBackgroundColor), 0.3);
+        pointer-events: none;
+      }
+    }
+  }
+}

@@ -4,10 +4,13 @@ import Demo2Text from './Demo-2-Text'
 import Demo2MarkdownText from './Demo-2-MarkdownText'
 import Demo3Image from './Demo-3-Image'
 
+import DemoAInput from './Demo-A-Input'
+
 export { 
   Demo0Basic, 
   Demo1Loading,
   Demo2Text,
   Demo2MarkdownText,
-  Demo3Image
+  Demo3Image,
+  DemoAInput
 }

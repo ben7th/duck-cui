@@ -10,6 +10,7 @@ import {
   TextPage,
   MarkdownTextPage,
   ImagePage,
+  InputPage,
 } from './pages/index'
 
 import Markdown from 'markdown-to-jsx'
@@ -72,7 +73,7 @@ class Index extends React.Component {
         <li>
           <span>CoverAble</span>
           <ul>
-            <li><span>Input</span></li>
+            <li><L to='/AppendAble/Input'>Input</L></li>
             <li><span>Choices</span></li>
             <li><span>Wheel</span></li>
             <li><span>ImagePreviewer</span></li>
@@ -92,6 +93,8 @@ class Index extends React.Component {
           <Route exact path='/AppendAble/Text' component={ TextPage } />
           <Route exact path='/AppendAble/MarkdownText' component={ MarkdownTextPage } />
           <Route exact path='/AppendAble/Image' component={ ImagePage } />
+
+          <Route exact path='/AppendAble/Input' component={ InputPage } />
         </div>
       </div>
     </div>

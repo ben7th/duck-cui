@@ -39,3 +39,13 @@ $tipPadding: $base * 0.25 $base * 0.5;
 
 // Image 的样式
 $ImageMarginScreen: 3rem;
+
+/* CoverAble */
+$inputBackgroundColor: rgba(white, 0.8);
+$InputFontSize: $base;
+$InputPadding: $base * 0.5 $base * 1;
+$InputLineHeight: $base * 1.4;
+$inputButtonWidth: $base * 2.4;
+$InputSendBtnBackgroundColor: darken(#41d100, 10%);
+$InputSendBtnColor: white;
+$InputSendBtnSize: $base * 2;
