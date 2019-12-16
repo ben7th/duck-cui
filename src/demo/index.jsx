@@ -13,6 +13,10 @@ import {
   InputPage,
 } from './pages/index'
 
+import {
+  WeatherPage
+} from './pages/advanced/index'
+
 import Markdown from 'markdown-to-jsx'
 
 const md = `
@@ -47,6 +51,12 @@ class Index extends React.Component {
       <ul className={ css.side }>
         <li><L to='/'>介绍</L></li>
         <li><L to='/basic'>基本演示</L></li>
+        <li>
+          <span>综合演示</span>
+          <ul>
+            <li><L to='/advanced/weather'>天气查询</L></li>
+          </ul>
+        </li>
         <li>
           <span>AppendAble</span>
           <ul>
@@ -88,6 +98,8 @@ class Index extends React.Component {
             <Markdown>{ md }</Markdown>
           </Route>
           <Route exact path='/basic' component={ BasicPage } />
+
+          <Route exact path='/advanced/weather' component={ WeatherPage } />
 
           <Route exact path='/AppendAble/Loading' component={ LoadingPage } />
           <Route exact path='/AppendAble/Text' component={ TextPage } />

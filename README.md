@@ -2,11 +2,32 @@
 
 ## 迭代记录
 
+### DAY11
+
+- 尝试集成 [react-player](https://cookpete.com/react-player/)
+
+- 开源方式的思考：
+  - support sibbay 的部分按照 sibbay 的社区规则来做：
+    - 方式：fork 代码到 sibbay org，前期手动管理代码同步，直到代码足够解耦后，把和 sibbay 支持相关的部分都转化为独立打包的插件形式；
+    - sibbay mri 所有用到的组件的实现；
+    - 仿真工具支持，静态 web 工具支持，微信小程序支持；
+    - 左手医生的对接支持；
+  - 非 support sibbay 的部分，考虑，安排，沟通，单独去做，暂时在 ben7th 的 repo 上管理
+    - 和第三方 API，数据库的对接；
+    - 和 hubot, discord 等工具的对接；
+    - 实现其他社区或其他用户需求；
+  - 介绍，文档与示例维护，推广，单独进行，建立网站，将 sibbay 等标记为被支持的客户。
+    - 会将 sibbay 的支持作为示例来介绍，但不会涉及 sibbay 的技术细节
+    - 通过 fans 捐赠，众筹等途径维护开发成本。例如 <https://github.com/sponsors> <https://afdian.net/>
+- 开发的思考：
+  - 先把基于无状态 http 请求的场景支持彻底，再开始考虑长连接的场景
+
 ### DAY10
 
 - 实现 Input
 - 引入 react-textarea-autosize
 - 引入 iconfont, 调整 webpack 配置，增加 `/\.(eot|woff|woff2|ttf|svg)$/` 的打包
+- 实现和风天气的 demo
 
 ### DAY6
 

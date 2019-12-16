@@ -80,7 +80,8 @@ export default class CUIContext {
     let scroller = Scroll.animateScroll
     // console.log(scroller)
     scroller.scrollToBottom({
-      containerId: 'MRI-Scroller'
+      containerId: 'MRI-Scroller',
+      duration: 100
     })
   }
 

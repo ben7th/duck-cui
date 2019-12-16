@@ -9,7 +9,7 @@ export default class DemoBox extends React.Component {
   render () {
     return <div className={ css.DemoBox }>
       <div className={ css.phone }>
-        <PhoneUI>
+        <PhoneUI size={ this.props.size }>
           <CUI ref={ $node => {
             if ($node) { this.cuic = $node.cuic }
           } } />

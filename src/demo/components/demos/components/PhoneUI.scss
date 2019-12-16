@@ -2,6 +2,9 @@ $phoneWidth: 300px;
 $phoneHeight: 400px;
 $pixel: 1;
 
+$phoneWidthLarge: 375px;
+$phoneHeightLarge: 600px;
+
 .PhoneUI {
   width: $phoneWidth; 
   height: $phoneHeight;
@@ -32,5 +35,15 @@ $pixel: 1;
     transform-origin: 0 0;
     transform: scale(1 / $pixel);
     border-radius: .5rem;
+  }
+
+  &.large {
+    width: $phoneWidthLarge; 
+    height: $phoneHeightLarge;
+
+    .phoneinner {
+      width: $phoneWidthLarge * $pixel; 
+      height: $phoneHeightLarge * $pixel;
+    }
   }
 }
