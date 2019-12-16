@@ -19,10 +19,18 @@ export default class AppendAbleItem extends React.Component {
       
       return <div className={ `${css.SayAble} ${css[`side-${side}`]} ${css[`type-${typeName}`]}` }>
         <SibbayAvatar side={ side } />
-        <div className={ css.box }>
-          { React.createElement(x.component, x.props) }
+        <div className={ css.box } onClick={ evt => this.boxClick() }>
+          { React.createElement(x.component, { ...x.props, ref: (node) => {
+            this.$boxChild = node
+          } }) }
         </div>
       </div>
+    }
+  }
+
+  boxClick () {
+    if (this.$boxChild.handleBoxClick) {
+      this.$boxChild.handleBoxClick()
     }
   }
 }

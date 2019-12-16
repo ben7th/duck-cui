@@ -4,18 +4,11 @@ import css from './index.scss'
 
 import { BrowserRouter, Route, NavLink } from 'react-router-dom'
 
-import { 
-  BasicPage,
-  LoadingPage,
-  TextPage,
-  MarkdownTextPage,
-  ImagePage,
-  InputPage,
-} from './pages/index'
+import pages from './pages'
 
 import {
   WeatherPage
-} from './pages/advanced/index'
+} from './pages/advanced'
 
 import Markdown from 'markdown-to-jsx'
 
@@ -72,7 +65,7 @@ class Index extends React.Component {
                   </ul>
                 </li>
                 <li><L to='/AppendAble/Image'>Image</L></li>
-                <li><span>Audio</span></li>
+                <li><L to='/AppendAble/Audio'>Audio</L></li>
                 <li><span>Video</span></li>
                 <li><span>Link</span></li>
                 <li><span>Card</span></li>
@@ -97,16 +90,17 @@ class Index extends React.Component {
           <Route exact path='/'>
             <Markdown>{ md }</Markdown>
           </Route>
-          <Route exact path='/basic' component={ BasicPage } />
+          <Route exact path='/basic' component={ pages.BasicPage } />
 
           <Route exact path='/advanced/weather' component={ WeatherPage } />
 
-          <Route exact path='/AppendAble/Loading' component={ LoadingPage } />
-          <Route exact path='/AppendAble/Text' component={ TextPage } />
-          <Route exact path='/AppendAble/MarkdownText' component={ MarkdownTextPage } />
-          <Route exact path='/AppendAble/Image' component={ ImagePage } />
+          <Route exact path='/AppendAble/Loading' component={ pages.LoadingPage } />
+          <Route exact path='/AppendAble/Text' component={ pages.TextPage } />
+          <Route exact path='/AppendAble/MarkdownText' component={ pages.MarkdownTextPage } />
+          <Route exact path='/AppendAble/Image' component={ pages.ImagePage } />
+          <Route exact path='/AppendAble/Audio' component={ pages.AudioPage } />
 
-          <Route exact path='/AppendAble/Input' component={ InputPage } />
+          <Route exact path='/AppendAble/Input' component={ pages.InputPage } />
         </div>
       </div>
     </div>

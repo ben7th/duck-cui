@@ -1,0 +1,98 @@
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Audio {
+  display: flex;
+
+  .loading {
+    color: orange;
+    animation: spin 1s infinite linear;
+  }
+}
+
+@keyframes p1 {
+  0% { height: 4px; }
+  25% { height: 12px; }
+  50% { height: 20px; }
+  75% { height: 12px; }
+  100% { height: 4px; }
+}
+
+@keyframes p2 {
+  0% { height: 12px; }
+  25% { height: 4px; }
+  50% { height: 12px; }
+  75% { height: 20px; }
+  100% { height: 12px; }
+}
+
+@keyframes p3 {
+  0% { height: 20px; }
+  25% { height: 12px; }
+  50% { height: 4px; }
+  75% { height: 12px; }
+  100% { height: 20px; }
+}
+
+@keyframes p4 {
+  0% { height: 12px; }
+  25% { height: 20px; }
+  50% { height: 12px; }
+  75% { height: 4px; }
+  100% { height: 12px; }
+}
+
+.AudioIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  margin-right: 8px;
+
+  span {
+    width: 2px;
+    background-color: #555;
+    margin-right: 3px;
+  }
+  span:nth-child(1) {
+    height: 4px;
+  }
+  span:nth-child(2) {
+    height: 12px;
+  }
+  span:nth-child(3) {
+    height: 20px;
+  }
+  span:nth-child(4) {
+    height: 12px;
+  }
+  span:nth-child(5) {
+    height: 4px;
+    margin-right: 0;
+  }
+
+  &.playing {
+    span:nth-child(1) {
+      animation: p1 infinite 1s linear;
+    }
+    span:nth-child(2) {
+      animation: p2 infinite 1s linear;
+    }
+    span:nth-child(3) {
+      animation: p3 infinite 1s linear;
+    }
+    span:nth-child(4) {
+      animation: p4 infinite 1s linear;
+    }
+    span:nth-child(5) {
+      animation: p1 infinite 1s linear;
+    }
+  }
+}

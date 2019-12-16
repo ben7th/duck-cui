@@ -5,7 +5,7 @@
 ### DAY11
 
 - 尝试集成 [react-player](https://cookpete.com/react-player/)
-
+- 实现了 Audio 组件
 - 开源方式的思考：
   - support sibbay 的部分按照 sibbay 的社区规则来做：
     - 方式：fork 代码到 sibbay org，前期手动管理代码同步，直到代码足够解耦后，把和 sibbay 支持相关的部分都转化为独立打包的插件形式；

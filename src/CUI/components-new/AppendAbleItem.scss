@@ -51,4 +51,10 @@
       margin-left: $ImageMarginScreen;
     }
   }
+
+  &.type-Audio {
+    .box {
+      cursor: pointer;
+    }
+  }
 }
