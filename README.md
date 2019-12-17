@@ -2,6 +2,11 @@
 
 ## 迭代记录
 
+### DAY12
+
+- 实现 Choices
+- 拆分工程
+
 ### DAY11
 
 - 尝试集成 [react-player](https://cookpete.com/react-player/)

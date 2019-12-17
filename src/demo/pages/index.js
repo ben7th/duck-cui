@@ -5,6 +5,7 @@ import MarkdownTextPage from './MarkdownTextPage'
 import ImagePage from './ImagePage'
 import InputPage from './InputPage'
 import AudioPage from './AudioPage'
+import ChoicesPage from './ChoicesPage'
 
 export default {
   BasicPage,
@@ -13,5 +14,6 @@ export default {
   MarkdownTextPage,
   ImagePage,
   InputPage,
-  AudioPage
+  AudioPage,
+  ChoicesPage
 }

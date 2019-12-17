@@ -1,5 +1,8 @@
 $base: 16px;
 
+$c0: #41d100;
+$c1: #4fa303;
+
 // 头像的宽高
 $AvatarSize: $base * 2;
 // 头像与对话气泡的间隔
@@ -24,7 +27,9 @@ $ChatBubbleTextColor: #333;
 $ChatBubbleTextColorLocal: #fff;
 // Local 对话气泡背景色
 $ChatBubbleBackgroundColor: #fff;
-$ChatBubbleBackgroundColorLocal: #41d100;
+$ChatBubbleBackgroundColorLocal: $c1;
+// 阴影
+$ChatBubbleBoxShadow: 1px 1px 1px rgba(black, 0.2), 0px 0px 1px rgba(black, 0.1);
 
 // Loading 气泡的内部高度
 $LoadingBubbleHeight: $base * 1.5; // 数值上等于 $ChatBubbleLineHeight
@@ -41,11 +46,23 @@ $tipPadding: $base * 0.25 $base * 0.5;
 $ImageMarginScreen: 3rem;
 
 /* CoverAble */
+
+// Input
 $inputBackgroundColor: rgba(white, 0.8);
 $InputFontSize: $base;
 $InputPadding: $base * 0.5 $base * 1;
 $InputLineHeight: $base * 1.4;
 $inputButtonWidth: $base * 2.4;
-$InputSendBtnBackgroundColor: darken(#41d100, 10%);
+$InputSendBtnBackgroundColor: darken($c1, 10%);
 $InputSendBtnColor: white;
 $InputSendBtnSize: $base * 2;
+
+// Choices
+$ChoicesBackgroundColor: $inputBackgroundColor;
+$ChoicePadding: $ChatBubblePadding;
+$ChoiceBackgroundColor: $ChatBubbleBackgroundColorLocal;
+$ChoiceTextColor: $ChatBubbleTextColorLocal;
+$ChoiceFontSize: $ChatBubbleFontSize;
+$ChoiceBorderRadius: $ChatBubblBorderRadiusReverse;
+$ChoiceMargin: $base / 4;
+$ChoiceBoxShadow: $ChatBubbleBoxShadow;

@@ -77,7 +77,7 @@ class Index extends React.Component {
           <span>CoverAble</span>
           <ul>
             <li><L to='/AppendAble/Input'>Input</L></li>
-            <li><span>Choices</span></li>
+            <li><L to='/AppendAble/Choices'>Choices</L></li>
             <li><span>Wheel</span></li>
             <li><span>ImagePreviewer</span></li>
           </ul>
@@ -101,6 +101,7 @@ class Index extends React.Component {
           <Route exact path='/AppendAble/Audio' component={ pages.AudioPage } />
 
           <Route exact path='/AppendAble/Input' component={ pages.InputPage } />
+          <Route exact path='/AppendAble/Choices' component={ pages.ChoicesPage } />
         </div>
       </div>
     </div>

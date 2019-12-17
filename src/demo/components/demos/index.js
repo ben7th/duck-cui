@@ -6,6 +6,7 @@ import Demo3Image from './Demo-3-Image'
 import Demo4Audio from './Demo-4-Audio'
 
 import DemoAInput from './Demo-A-Input'
+import DemoBChoices from './Demo-B-Choices'
 
 export { 
   Demo0Basic, 
@@ -15,4 +16,5 @@ export {
   Demo3Image,
   DemoAInput,
   Demo4Audio,
+  DemoBChoices,
 }

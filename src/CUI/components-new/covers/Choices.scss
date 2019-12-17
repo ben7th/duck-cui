@@ -1,22 +1,27 @@
+@import '../css/vars';
+
 .Choices {
   position: fixed;
   left: 0; right: 0; bottom: 0;
+  background: $ChoicesBackgroundColor;
   display: flex;
-  padding: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
+  padding: $ChoiceMargin;
   pointer-events: none;
 
   button {
-    pointer-events: all;
-    display: block;
-    background-color: #41d100;
-    color: white;
-    padding: 1.2rem 2rem;
-    border-radius: 1rem 2.5rem;
-    margin-right: 1rem;
-    font-size: 2rem;
-    border: 0 none;
     outline: none;
     cursor: pointer;
+    border: 0 none;
+
+    padding: $ChoicePadding;
+    background-color: $ChoiceBackgroundColor;
+    color: $ChoiceTextColor;
+    font-size: $ChoiceFontSize;
+    border-radius: $ChoiceBorderRadius;
+    margin: $ChoiceMargin;
+    pointer-events: all;
+    box-shadow: $ChatBubbleBoxShadow;
   }
 }

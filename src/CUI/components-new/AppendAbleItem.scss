@@ -13,7 +13,7 @@
   .box {
     font-size: $ChatBubbleFontSize;
     padding: $ChatBubblePadding;
-    box-shadow: 1px 1px 1px rgba(black, 0.2), 0px 0px 1px rgba(black, 0.1);
+    box-shadow: $ChatBubbleBoxShadow;
     line-height: $ChatBubbleLineHeight;
     word-break: break-all;
     background-color: $ChatBubbleBackgroundColor;
