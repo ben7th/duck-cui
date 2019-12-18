@@ -1,9 +1,10 @@
-import SayAble from '../../interfaces/SayAble'
 import React from 'react'
 import css from './Loading.scss'
+import buildSayAble from '../../interfaces/buildSayAble'
 
-export default class Loading extends SayAble {
-  component = class extends React.Component {
+export default buildSayAble({ 
+  typeName: 'Loading', 
+  component: class extends React.Component {
     render () {
       return <div className={ css.Loading }>
         <div className={ css.c1 }></div>
@@ -12,13 +13,4 @@ export default class Loading extends SayAble {
       </div>
     }
   }
-
-  constructor (props) {
-    super()
-    this.props = props
-  }
-
-  get typeName () {
-    return 'Loading'
-  }
-}
+})

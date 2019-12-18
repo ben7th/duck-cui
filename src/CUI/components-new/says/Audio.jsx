@@ -1,28 +1,30 @@
-import SayAble from '../../interfaces/SayAble'
 import React from 'react'
 import css from './Audio.scss'
 import ReactPlayer from 'react-player'
 import classNames from 'classnames/bind'
 import FontIcon from '../../components-new/icons/FontIcon'
+import buildSayAble from '../../interfaces/buildSayAble'
 
-export default class Audio extends SayAble {
-  component = class extends React.Component {
+export default buildSayAble({
+  typeName: 'Audio',
+  component: class extends React.Component {
     render () {
       let { ready, duration, playing } = this.state
+      let { url } = this.props
 
       return <div className={ css.Audio }>
         <AudioIcon playing={ playing } />
         <ReactPlayer 
           className={ css.rplayer }
           width='0' height='0'
-          url='http://tna-upload.oss-cn-shanghai.aliyuncs.com/vultr-upload/2019-10-16/8bit/music.mp3'
+          url={ url }
           ref={ node => this.$player = node }
           playing={ playing }
           onReady={ evt => this.ready() }
           onEnded={ evt => this.ended() }
         />
         {
-          ready ? <span>{ duration }″</span> : 
+          ready ? <span>{ duration }</span> : 
             <div className={ css.loading }><FontIcon icon='loading' /></div>
         }
       </div>
@@ -30,13 +32,16 @@ export default class Audio extends SayAble {
 
     state = {
       ready: false,
-      duration: 0,
+      duration: null,
       playing: false
     }
 
     ready () {
-      let duration = this.$player.getDuration()
-      duration = Math.ceil(duration)
+      let d = this.$player.getDuration()
+      d = Math.ceil(d)
+      let m = ~~(d / 60)
+      let s = d % 60
+      let duration = `${ m > 0 ? `${m}′` : '' }${ s >= 10 ? s : `0${ s }` }″`
       this.setState({ duration, ready: true })
     }
 
@@ -57,16 +62,7 @@ export default class Audio extends SayAble {
       }
     }
   }
-
-  constructor (props) {
-    super()
-    this.props = props
-  }
-
-  get typeName () {
-    return 'Audio'
-  }
-}
+})
 
 class AudioIcon extends React.Component {
   render () {

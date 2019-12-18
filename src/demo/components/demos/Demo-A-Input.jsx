@@ -26,8 +26,8 @@ export default class extends React.Component {
     let input = new Input({ 
       placeholder: '请输入……',
       maxRows: 3
-    }).onSend(async (evt) => {
-      console.log(evt)
+    })
+    .on('send', async (evt) => {
       let { value } = evt
       await this.cuic.append(new Text({ text: value }).setSide('local'))
       await input.$context.clear()

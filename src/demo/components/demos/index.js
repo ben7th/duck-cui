@@ -1,4 +1,5 @@
 import Demo0Basic from './Demo-0-Basic'
+import Demo1Tip from './Demo-1-Tip'
 import Demo1Loading from './Demo-1-Loading'
 import Demo2Text from './Demo-2-Text'
 import Demo2MarkdownText from './Demo-2-MarkdownText'
@@ -17,4 +18,5 @@ export {
   DemoAInput,
   Demo4Audio,
   DemoBChoices,
+  Demo1Tip
 }

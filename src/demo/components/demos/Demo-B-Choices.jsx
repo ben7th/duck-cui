@@ -26,7 +26,7 @@ export default class extends React.Component {
     let cs = new Choices({ items: [
       '西瓜', '苹果', '橘子', '樱桃', '芒果', '哈密瓜', '猕猴桃'
     ] })
-    cs.onSelect(async x => {
+    cs.on('select', async x => {
       await this.cuic.append(new Text({ text: x }).setSide('local'))
     })
     await this.cuic.cover(cs)

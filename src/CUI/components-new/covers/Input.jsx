@@ -1,12 +1,14 @@
-import CoverAble from '../../interfaces/CoverAble'
 import React from 'react'
 import css from './Input.scss'
 
 import TextareaAutosize from 'react-textarea-autosize'
 import FontIcon from '../../components-new/icons/FontIcon'
 
-export default class Input extends CoverAble {
-  component = class extends React.Component {
+import buildCoverAble from '../../interfaces/buildCoverAble'
+
+export default buildCoverAble({
+  typeName: 'Input',
+  component: class extends React.Component {
     render () {
       let { placeholder, maxRows } = this.props
 
@@ -19,7 +21,7 @@ export default class Input extends CoverAble {
             onChange={ evt => this.setState({ value: evt.target.value }) }
             onKeyDown={ async evt => {
               if (evt.keyCode === 13 && (evt.ctrlKey || evt.metaKey)) {
-                await this.callOnSend()
+                await this._send()
               }
             }}
           />
@@ -28,7 +30,7 @@ export default class Input extends CoverAble {
           <button 
             disabled={ this.state.value.length === 0 }
             className={ css.send }
-            onClick={ async evt => await this.callOnSend() }
+            onClick={ async evt => await this._send() }
           ><FontIcon icon='send' /></button>
         </div>
       </div>
@@ -38,34 +40,12 @@ export default class Input extends CoverAble {
       value: ''
     }
 
-    async callOnSend () {
-      let { _onSend } = this.props._object
-      if (_onSend) {
-        await _onSend({ value: this.state.value })
-      }
-    }
-
-    async componentDidMount () {
-      this.props._object.$context = this
+    async _send () {
+      this.props._object.handle('send', { value: this.state.value })
     }
 
     async clear () {
       this.setState({ value: '' })
     }
   }
-
-  constructor (props) {
-    super()
-    this.props = props
-    this.props._object = this
-  }
-
-  get typeName () {
-    return 'Input'
-  }
-
-  onSend (func) {
-    this._onSend = func
-    return this
-  }
-}
+})

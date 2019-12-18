@@ -9,29 +9,31 @@ import IntroPage from './pages/IntroPage'
 
 const indexData = [
   { title: '介绍', path: '/', component: IntroPage },
-  { title: '基本演示', path: '/basic', component: pages.BasicPage },
-  { title: '综合演示', children: [
+  { title: '集成演示', children: [
+    { title: '基本对话', path: '/basic', component: pages.BasicPage },
     { title: '天气查询', path: '/advanced/weather', component: advancedPages.WeatherPage }
   ]},
-  { title: 'AppendAble', children: [
-    { title: 'Tip' },
-    { title: 'SayAble', children: [
-      { title: 'Loading', path: '/AppendAble/Loading', component: pages.LoadingPage },
-      { title: 'Text', path: '/AppendAble/Text', component: pages.TextPage, children: [
-        { title: 'MarkdownText', path: '/AppendAble/MarkdownText', component: pages.MarkdownTextPage }
-      ]},
-      { title: 'Image', path: '/AppendAble/Image', component: pages.ImagePage },
-      { title: 'Audio', path: '/AppendAble/Audio', component: pages.AudioPage },
-      { title: 'Video' },
-      { title: 'Link' },
-      { title: 'Card' }
-    ]}
-  ]},
-  { title: 'CoverAble', children: [
-    { title: 'Input', path: '/CoverAble/Input', component: pages.InputPage },
-    { title: 'Choices', path: '/CoverAble/Choices', component: pages.ChoicesPage },
-    { title: 'Wheel' },
-    { title: 'ImagePreviewer' }
+  { title: '组件', children: [
+    { title: 'AppendAble', children: [
+      { title: 'Tip', path: '/AppendAble/Tip', component: pages.TipPage },
+      { title: 'SayAble', children: [
+        { title: 'Loading', path: '/AppendAble/Loading', component: pages.LoadingPage },
+        { title: 'Text', path: '/AppendAble/Text', component: pages.TextPage, children: [
+          { title: 'MarkdownText', path: '/AppendAble/MarkdownText', component: pages.MarkdownTextPage }
+        ]},
+        { title: 'Image', path: '/AppendAble/Image', component: pages.ImagePage },
+        { title: 'Audio', path: '/AppendAble/Audio', component: pages.AudioPage },
+        { title: 'Video' },
+        { title: 'Link' },
+        { title: 'Card' }
+      ]}
+    ]},
+    { title: 'CoverAble', children: [
+      { title: 'Input', path: '/CoverAble/Input', component: pages.InputPage },
+      { title: 'Choices', path: '/CoverAble/Choices', component: pages.ChoicesPage },
+      { title: 'Wheel' },
+      { title: 'ImagePreviewer' }
+    ]},
   ]},
   { title: 'Loader' },
   { title: 'Events' }

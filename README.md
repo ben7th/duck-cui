@@ -2,6 +2,13 @@
 
 ## 迭代记录
 
+### DAY13
+
+- 添加第三方库引用清单 <https://github.com/ben7th/duck-cui/wiki/listOf3rd>
+- 重构 Demo TOC
+- 优化 audio 以显示不同长度的音频
+- 重构接口类，改为 builder
+
 ### DAY12
 
 - 实现 Choices

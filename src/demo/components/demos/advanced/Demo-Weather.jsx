@@ -32,7 +32,7 @@ export default class DemoBasic extends React.Component {
     let input = new Input({ 
       placeholder: '输入城市名',
       maxRows: 3
-    }).onSend(async (evt) => {
+    }).on('send', async (evt) => {
       console.log(evt)
       let { value } = evt
       let location = value

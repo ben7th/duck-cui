@@ -9,7 +9,9 @@ export default class AppendAbleItem extends React.Component {
     let x = this.props.data
 
     if (x.base === 'AppendAble') {
-      return <div className={ css.AppendAble }>
+      // let { typeName } = x
+
+      return <div className={ `${css.AppendAble}` }>
         { React.createElement(x.component, x.props) }
       </div>
     }

@@ -4,7 +4,7 @@ import css from './CUI.scss'
 import CUIBackground from './CUIBackground'
 
 // 需要重构
-import ChatList from './components/ChatList'
+import AppendItems from './components-new/AppendItems'
 import CoverItems from './components-new/CoverItems'
 
 import Replies from './components/Replies'
@@ -18,29 +18,27 @@ import CUIContext from './context/CUIContext'
 
 export default class CUI extends React.Component {
   state = {
-    chatitems: [],
-    replies: [],
-
+    appendItems: [],
     coverItems: [],
 
-    // 多选
-    mReplies: [],
+    // // 多选
+    // mReplies: [],
 
-    // 当前需要选择的预设条件
-    currentCondition: null,
+    // // 当前需要选择的预设条件
+    // currentCondition: null,
 
-    // 拨轮
-    wheel: null,
+    // // 拨轮
+    // wheel: null,
 
-    // 气泡收取
-    bubble: null
+    // // 气泡收取
+    // bubble: null
   }
 
   render () {
     return <>
       <CUIBackground />
       <div className={ css.CUI } id='MRI-Scroller'>
-        <ChatList chatitems={ this.state.chatitems } />
+        <AppendItems appendItems={ this.state.appendItems } />
         <CoverItems coverItems={ this.state.coverItems } />
 
         {/* <Replies 
