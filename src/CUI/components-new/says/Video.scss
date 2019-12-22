@@ -1,0 +1,79 @@
+@import '../../../CUI/components-new/css/vars';
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Video {
+  position: relative;
+
+  &.loading {
+    background-color: #fff;
+    padding: $ChatBubblePadding;
+    display: flex;
+    .loading {
+      color: orange;
+      animation: spin 1s infinite linear;
+    }
+  }
+
+  .playicon {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    cursor: pointer;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 0; height: 0;
+      border: solid 12px transparent;
+      border-left: solid 12px white;
+      margin: auto; top: 0; left: 16px; right: 0; bottom: 0;
+    }
+
+    &:after {
+      content: '';
+      width: 32px; height: 32px;
+      border-radius: 100%;
+      border: solid 4px white;
+      position: absolute;
+      margin: auto; top: 0; left: 0; right: 0; bottom: 0;
+    }
+  }
+
+  .pauseIcon {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    cursor: pointer;
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 6px; height: 24px;
+      background-color: #fff;
+      margin: auto; top: 0; left: 0; right: 12px; bottom: 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 6px; height: 24px;
+      background-color: #fff;
+      margin: auto; top: 0; left: 12px; right: 0; bottom: 0;
+    }
+  }
+}

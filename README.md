@@ -2,12 +2,18 @@
 
 ## 迭代记录
 
+### DAY14
+
+- 调整 Picker 体验，重写样式
+- 实现 Video 和视频播放控制
+
 ### DAY13
 
 - 添加第三方库引用清单 <https://github.com/ben7th/duck-cui/wiki/listOf3rd>
 - 重构 Demo TOC
-- 优化 audio 以显示不同长度的音频
+- 优化 Audio 以显示不同长度的音频
 - 重构接口类，改为 builder
+- 通过 rmc-picker 实现 Picker
 
 ### DAY12
 

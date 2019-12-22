@@ -57,4 +57,12 @@
       cursor: pointer;
     }
   }
+
+  &.type-Video {
+    .box {
+      background-color: transparent;
+      padding: 0;
+      overflow: hidden;
+    }
+  }
 }

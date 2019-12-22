@@ -7,6 +7,8 @@ import InputPage from './InputPage'
 import AudioPage from './AudioPage'
 import ChoicesPage from './ChoicesPage'
 import TipPage from './TipPage'
+import PickerPage from './PickerPage'
+import VideoPage from './VideoPage'
 
 export default {
   BasicPage,
@@ -17,5 +19,7 @@ export default {
   InputPage,
   AudioPage,
   ChoicesPage,
-  TipPage
+  TipPage,
+  PickerPage,
+  VideoPage
 }

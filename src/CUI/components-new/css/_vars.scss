@@ -66,3 +66,13 @@ $ChoiceFontSize: $ChatBubbleFontSize;
 $ChoiceBorderRadius: $ChatBubblBorderRadiusReverse;
 $ChoiceMargin: $base / 4;
 $ChoiceBoxShadow: $ChatBubbleBoxShadow;
+
+// Picker
+$PickerBackgroundColor: #f5f5f9;
+$PickerIndicatorBackgroundColor: transparent;
+$PickerSendBtnBackgroundColor: darken($c1, 10%);
+$PickerSendBtnColor: white;
+$PickerSendBtnPadding: $base * 0.5 $base * 1;
+$PickerSendBtnFontSize: $base;
+$PickerBorderRadius: $base * 0.5;
+$PickerBoxPadding: $base * 0.3;

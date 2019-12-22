@@ -31,7 +31,7 @@ export default class CUIContext {
     return this
   }
 
-  // 移除最后一个符合条件的节点
+  // 移除最后一个符合条件的 AppendAble 节点
   async removeLast ({ typeName }) {
     let { appendItems } = this.$MRI.state
     let idx = _array.findLastIndex(appendItems, (x) => {
@@ -42,6 +42,7 @@ export default class CUIContext {
     this.$MRI.setState({ appendItems })
   }
 
+  // 移除所有符合条件的 AppendAble 节点
   async removeAll (condition) {
     let { appendItems } = this.$MRI.state
 
@@ -59,12 +60,24 @@ export default class CUIContext {
     this.$MRI.setState({ appendItems })
   }
 
+  // 等待一定的毫秒数
   async waitFor ({ duration }) {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve()
       }, duration)
     })
+  }
+
+  // 移除一个 CoverAble 节点
+  async removeCoverAble ({ typeName }) {
+    let { coverItems } = this.$MRI.state
+    let idx = _array.findLastIndex(coverItems, (x) => {
+      if (!typeName) { return true }
+      return x.typeName === typeName
+    })
+    _array.pullAt(coverItems, idx)
+    this.$MRI.setState({ coverItems })
   }
 
   // ------- 旧方法

@@ -1,0 +1,140 @@
+@import '../css/vars';
+
+.Picker {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: $PickerBackgroundColor;
+
+  .indicator {
+    // background-color: red !important;
+  }
+  .pickerItem {
+    // custom
+  }
+
+  .bar {
+    background-color: #fff;
+    padding: $PickerBoxPadding;
+    display: flex;
+    .sendBtn {
+      background-color: $PickerSendBtnBackgroundColor;
+      color: $PickerSendBtnColor;
+      font-size: $PickerSendBtnFontSize;
+      padding: $PickerSendBtnPadding;
+      border-radius: $PickerBorderRadius;
+      border: 0 none;
+      outline: none;
+      flex: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+// rmc-picker 的样式
+:global {
+  $itemHeight: 34px;
+  $fontSize: 16px;
+  $padding: 0 10px;
+  $inactiveColor: #9b9b9b;
+
+  $c1: rgba(255, 255, 255, 0.95);
+  $c2: rgba(255, 255, 255, 0.6);
+
+  .rmc-picker,
+  .rmc-multi-picker {
+    height: $itemHeight * 7; // 238
+  }
+  .rmc-multi-picker {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+
+  .rmc-picker {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    -webkit-box-flex: 1;
+    flex: 1;
+    text-align: center;
+
+    .rmc-picker-mask {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      margin: 0 auto;
+      width: 100%;
+      z-index: 3;
+
+      // background-image: 
+      //   -webkit-gradient(linear, left top, left bottom, from($c1), to($c2)), 
+      //   -webkit-gradient(linear, left bottom, left top, from($c1), to($c2));
+      // background-image: 
+      //   linear-gradient(to bottom, $c1, $c2), 
+      //   linear-gradient(to top, $c1, $c2);
+      // background-position: top, bottom;
+      // background-size: 100% $itemHeight * 6; // 204
+      // background-repeat: no-repeat;
+      // background-image: 
+      //   -webkit-gradient(linear, left top, left bottom, from($c1), to($c2)), 
+      //   -webkit-gradient(linear, left bottom, left top, from($c1), to($c2));
+
+      // 改用伪元素实现
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        left: 0; right: 0; height: $itemHeight * 3;
+      }
+      &:before {
+        top: 0;
+        background-image: linear-gradient(to bottom, $c1, $c2);
+      }
+      &:after {
+        bottom: 0;
+        background-image: linear-gradient(to top, $c1, $c2);
+      }
+    }
+
+    .rmc-picker-indicator {
+      box-sizing: border-box;
+      width: 100%;
+      height: $itemHeight;
+      position: absolute;
+      left: 0;
+      top: $itemHeight * 3; // 102
+      z-index: 1;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      background-color: $PickerIndicatorBackgroundColor;
+    }
+
+    .rmc-picker-content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+
+      .rmc-picker-item {
+        font-size: $fontSize;
+        height: $itemHeight;
+        line-height: $itemHeight;
+        padding: $padding;
+        white-space: nowrap;
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $inactiveColor;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .rmc-picker-item-selected {
+        // font-weight: bold;
+      }
+    }
+  }
+}

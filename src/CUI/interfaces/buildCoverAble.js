@@ -1,7 +1,7 @@
 export default ({ typeName, component, events }) => {
   return class {
     constructor (props) {
-      this.props = props
+      this.props = props || {}
       this.props._object = this
       this.eventHandlers = {}
     }
