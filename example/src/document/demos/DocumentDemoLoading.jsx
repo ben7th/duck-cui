@@ -31,7 +31,8 @@ export default class DemoBasic extends React.Component {
   }
 
   async appendLoading () {
-    await this.cuic.append(new Loading())
+    await this.cuic.append(new Loading().setSide('remote'))
+    await this.cuic.append(new Loading().setSide('local'))
   }
 
   async removeLast () {

@@ -3,6 +3,7 @@
 .Tip {
   display: flex;
   justify-content: center;
+  line-height: $TipLineheight;
   
   span {
     color: white;

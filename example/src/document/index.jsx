@@ -16,9 +16,7 @@ const indexData = [
       { title: 'Tip', path: '/AppendAble/Tip', component: pages.TipPage },
       { title: 'SayAble', children: [
         { title: 'Loading', path: '/AppendAble/Loading', component: pages.LoadingPage },
-        { title: 'Text', path: '/AppendAble/Text', component: pages.TextPage, children: [
-          { title: 'MarkdownText', path: '/AppendAble/MarkdownText', component: pages.MarkdownTextPage }
-        ] },
+        { title: 'Text', path: '/AppendAble/Text', component: pages.TextPage },
         { title: 'Image', path: '/AppendAble/Image', component: pages.ImagePage },
         { title: 'Audio', path: '/AppendAble/Audio', component: pages.AudioPage },
         { title: 'Video', path: '/AppendAble/Video', component: pages.VideoPage },
