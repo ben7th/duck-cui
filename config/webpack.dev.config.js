@@ -37,11 +37,11 @@ const devConfig = {
               }
             }
           },
-          { loader: 'sass-loader'}
+          { loader: 'sass-loader' }
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif|eot|woff|ttf|woff2)$/,
+        test: /\.(png|jpg|gif)$/,
         use: [ 'file-loader' ],
       },
       {

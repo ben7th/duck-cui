@@ -4,13 +4,17 @@ const baseConfig = require('./webpack.base.js'); // 引用公共的配置
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 用于将组件的css打包成单独的文件输出到`lib`目录中
 
 const prodConfig = {
-  mode: 'production', // 开发模式
-  entry: path.join(__dirname, "../src/index.js"),
+  mode: 'production', // 生产模式
+  entry: [
+    // '@babel/polyfill',
+    path.join(__dirname, "../src/index.js")
+  ],
   output: {
     path: path.join(__dirname, "../lib/"),
     filename: "index.js",
     libraryTarget: 'umd', // 采用通用模块定义
     libraryExport: 'default', // 兼容 ES6 的模块系统、CommonJS 和 AMD 模块规范
+    publicPath: "/", // 加载资源时从根目录开始寻找，避免前进后退白屏
   },
   module: {
     rules: [
@@ -20,7 +24,26 @@ const prodConfig = {
       },
       {
         test: /\.scss$/,
-        loader: [MiniCssExtractPlugin.loader, 'css-loader?modules', 'sass-loader'],
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          { 
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[name]-[local]-[hash:base64:5]'
+              }
+            }
+          },
+          { loader: 'sass-loader' }
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [ 'file-loader' ],
+      },
+      {
+        test: /\.(eot|woff|woff2|ttf|svg)$/,
+        use: [ 'file-loader' ],
       },
     ]
   },

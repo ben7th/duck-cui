@@ -2,12 +2,17 @@
 
 ## 迭代记录
 
-### DAY14
+### 2019-12-23
+
+- 拆分 demo 打包和组件库打包
+  - 目的：隔离引用路径，简化引用，解耦
+
+### 2019-12-22
 
 - 调整 Picker 体验，重写样式
 - 实现 Video 和视频播放控制
 
-### DAY13
+### 2019-12-19
 
 - 添加第三方库引用清单 <https://github.com/ben7th/duck-cui/wiki/listOf3rd>
 - 重构 Demo TOC
@@ -15,12 +20,12 @@
 - 重构接口类，改为 builder
 - 通过 rmc-picker 实现 Picker
 
-### DAY12
+### 2019-12-18
 
 - 实现 Choices
 - 拆分工程
 
-### DAY11
+### 2019-12-16
 
 - 尝试集成 [react-player](https://cookpete.com/react-player/)
 - 实现了 Audio 组件
@@ -40,44 +45,35 @@
 - 开发的思考：
   - 先把基于无状态 http 请求的场景支持彻底，再开始考虑长连接的场景
 
-### DAY10
+### 2019-12-15
 
 - 实现 Input
 - 引入 react-textarea-autosize
 - 引入 iconfont, 调整 webpack 配置，增加 `/\.(eot|woff|woff2|ttf|svg)$/` 的打包
 - 实现和风天气的 demo
-
-### DAY6
-
 - 初步实现了基本的 markdown 支持
 - markdown-to-jsx 没有正确处理多行 quote 的问题，而 markdown-it 处理的是正确的，所以后者需要保留
 
-### DAY5
+### 2019-12-09
 
 - 在继承体系下逐个实现组件，在此过程中撰写文档的示例页面和优化代码结构
 - 引入函数库 [lodash](https://www.lodashjs.com/) 来简化代码
 - 引入 [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx) 来简化文档撰写
 - 已知问题：chrome 在开启硬件加速时，存在动画与 setTimeout 冲突的问题。具体表现为在 setTimeout 期间，动画有时不渲染
 - 重构了 Loading, Text, Image, Tip
-
-### DAY4
-
 - 完善了 demo 索引页面
 - 进一步修正了 demo 页面刷新的问题
-
-### DAY3
-
 - 引入 react-router-dom 组件，参考：<https://github.com/mrdulin/blog/issues/42>  
   文档：<https://www.jianshu.com/p/97e4af32811a>
 - 调整 webpack 配置，以 fix 路径刷新加载和前进回退问题
 - 实现了一个 demo 索引页面
 
-### DAY2
+### 2019-12-06
 
 - 增加接口描述文档，添加了 AppendAble 和 CoverAble 的描述
 - 实现 AppendAble 和 CoverAble 的基础代码
 
-### DAY1
+### 2019-12-05
 
 - 打包方式，参考 <https://juejin.im/post/5d6760b3e51d453b8b5fa60b>
 - 自己进行了一些修改，引入了：
