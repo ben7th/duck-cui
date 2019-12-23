@@ -4,14 +4,13 @@ import css from './index.scss'
 import { BrowserRouter, Route, NavLink } from 'react-router-dom'
 
 import pages from './pages'
-import IntroPage from './pages/IntroPage'
 
 const indexData = [
-  { title: '介绍', path: '/', component: IntroPage },
+  { title: '介绍', path: '/', component: pages.IntroPage },
   { title: '集成演示', children: [
     { title: '基本对话', path: '/basic', component: pages.BasicPage },
     { title: '天气查询', path: '/advanced/weather', component: pages.WeatherPage }
-  ]},
+  ] },
   { title: '组件', children: [
     { title: 'AppendAble', children: [
       { title: 'Tip', path: '/AppendAble/Tip', component: pages.TipPage },
@@ -19,21 +18,21 @@ const indexData = [
         { title: 'Loading', path: '/AppendAble/Loading', component: pages.LoadingPage },
         { title: 'Text', path: '/AppendAble/Text', component: pages.TextPage, children: [
           { title: 'MarkdownText', path: '/AppendAble/MarkdownText', component: pages.MarkdownTextPage }
-        ]},
+        ] },
         { title: 'Image', path: '/AppendAble/Image', component: pages.ImagePage },
         { title: 'Audio', path: '/AppendAble/Audio', component: pages.AudioPage },
         { title: 'Video', path: '/AppendAble/Video', component: pages.VideoPage },
         { title: 'Link' },
         { title: 'Card' }
-      ]}
-    ]},
+      ] }
+    ] },
     { title: 'CoverAble', children: [
       { title: 'Input', path: '/CoverAble/Input', component: pages.InputPage },
       { title: 'Choices', path: '/CoverAble/Choices', component: pages.ChoicesPage },
       { title: 'Picker', path: '/CoverAble/Picker', component: pages.PickerPage },
       { title: 'ImagePreviewer' }
-    ]},
-  ]},
+    ] },
+  ] },
   { title: 'Loader' },
   { title: 'Events' }
 ]

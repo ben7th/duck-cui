@@ -5,7 +5,7 @@ import Covers from './CUI/components-new/covers'
 import CUI from './CUI/CUI'
 
 const Duck = {
-  components: {
+  Components: {
     Says, Appends, Covers
   },
   CUI

@@ -1,3 +1,4 @@
+import IntroPage from './IntroPage'
 import BasicPage from './BasicPage'
 import LoadingPage from './LoadingPage'
 import TextPage from './TextPage'
@@ -12,6 +13,7 @@ import VideoPage from './VideoPage'
 import WeatherPage from './WeatherPage'
 
 export default {
+  IntroPage,
   BasicPage,
   LoadingPage,
   TextPage,

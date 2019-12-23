@@ -9,42 +9,42 @@ import Timeout from 'await-timeout'
 import _array from 'lodash/array'
 
 export default class CUIContext {
-  constructor ({ $MRI }) {
-    this.$MRI = $MRI
+  constructor ({ $CUI }) {
+    this.$CUI = $CUI
   }
 
   // 新方法
 
   // 添加 AppendAble 到 cui
   async append (appendAble) {
-    let { appendItems } = this.$MRI.state
+    let { appendItems } = this.$CUI.state
     appendItems.push(appendAble)
-    this.$MRI.setState({ appendItems })
+    this.$CUI.setState({ appendItems })
     return this
   }
 
   // 添加 CoverAble 到 cui
   async cover (coverAble) {
-    let { coverItems } = this.$MRI.state
+    let { coverItems } = this.$CUI.state
     coverItems.push(coverAble)
-    this.$MRI.setState({ coverItems })
+    this.$CUI.setState({ coverItems })
     return this
   }
 
   // 移除最后一个符合条件的 AppendAble 节点
   async removeLast ({ typeName }) {
-    let { appendItems } = this.$MRI.state
+    let { appendItems } = this.$CUI.state
     let idx = _array.findLastIndex(appendItems, (x) => {
       if (!typeName) { return true }
       return x.typeName === typeName
     })
     _array.pullAt(appendItems, idx)
-    this.$MRI.setState({ appendItems })
+    this.$CUI.setState({ appendItems })
   }
 
   // 移除所有符合条件的 AppendAble 节点
   async removeAll (condition) {
-    let { appendItems } = this.$MRI.state
+    let { appendItems } = this.$CUI.state
 
     if (condition) {
       let { typeName } = condition
@@ -57,7 +57,7 @@ export default class CUIContext {
       appendItems = []
     }
 
-    this.$MRI.setState({ appendItems })
+    this.$CUI.setState({ appendItems })
   }
 
   // 等待一定的毫秒数
@@ -71,21 +71,21 @@ export default class CUIContext {
 
   // 移除一个 CoverAble 节点
   async removeCoverAble ({ typeName }) {
-    let { coverItems } = this.$MRI.state
+    let { coverItems } = this.$CUI.state
     let idx = _array.findLastIndex(coverItems, (x) => {
       if (!typeName) { return true }
       return x.typeName === typeName
     })
     _array.pullAt(coverItems, idx)
-    this.$MRI.setState({ coverItems })
+    this.$CUI.setState({ coverItems })
   }
 
   // ------- 旧方法
 
   // _appendChatItems (chatItem) {
-  //   let { chatitems } = this.$MRI.state
+  //   let { chatitems } = this.$CUI.state
   //   chatitems.push(chatItem)
-  //   this.$MRI.setState({ chatitems })
+  //   this.$CUI.setState({ chatitems })
   //   this._scrollToBottom()
   // }
 
@@ -145,16 +145,16 @@ export default class CUIContext {
 
   // // 显示“我”的文本节点
   // appendMEText (text) {
-  //   let { chatitems } = this.$MRI.state
+  //   let { chatitems } = this.$CUI.state
   //   chatitems.push(ChatItemBuilder.ME.Text(text))
-  //   this.$MRI.setState({ chatitems })
+  //   this.$CUI.setState({ chatitems })
   // }
 
   // // 显示“我”的 RPC 节点
   // appendMERPC (text) {
-  //   let { chatitems } = this.$MRI.state
+  //   let { chatitems } = this.$CUI.state
   //   chatitems.push(ChatItemBuilder.ME.RPC(text))
-  //   this.$MRI.setState({ chatitems })
+  //   this.$CUI.setState({ chatitems })
   // }
 
   // // 显示 loading 节点，并等待耗时操作结束
@@ -181,26 +181,26 @@ export default class CUIContext {
   // // 显示下方选项
   // showChoices ({ choices }) {
   //   let replies = choices.map(x => ReplyBuilder.choice(x))
-  //   this.$MRI.setState({ replies })
+  //   this.$CUI.setState({ replies })
   // }
 
   // // 显示 demo 选项
   // showDemoChoices ({ demoChoices }) {
   //   let replies = demoChoices.map(x => ReplyBuilder.demoChoice(x))
-  //   this.$MRI.setState({ replies })
+  //   this.$CUI.setState({ replies })
   // }
 
   // // 清除下方选项或输入框
   // clearReplies () {
-  //   this.$MRI.setState({ replies: [] })
+  //   this.$CUI.setState({ replies: [] })
   // }
 
   // // 发送选项的时候，展示的动画
   // // 选中的节点飞上去
   // // 其他节点飞下去消失
   // async sendChoiceAnimation (choice) {
-  //   let { replies } = this.$MRI.state
-  //   this.$MRI.setState({ replies })
+  //   let { replies } = this.$CUI.state
+  //   this.$CUI.setState({ replies })
   //   replies.forEach(x => {
   //     x.runAnimation = 'fadedown'
   //     if (x == choice) {
@@ -208,7 +208,7 @@ export default class CUIContext {
   //     }
   //   })
 
-  //   this.$MRI.setState({ replies }) 
+  //   this.$CUI.setState({ replies }) 
 
   //   return new Promise(resolve => {
   //     setTimeout(() => {
@@ -220,46 +220,46 @@ export default class CUIContext {
   // // 显示预设条件选项
   // showConditionChoices (conditionNode) {
   //   console.log('showConditionChoices', conditionNode)
-  //   this.$MRI.setState({ currentCondition: conditionNode })
+  //   this.$CUI.setState({ currentCondition: conditionNode })
   //   // let replies = choices.map(x => ReplyBuilder.choice(x))
-  //   // this.$MRI.setState({ replies })
+  //   // this.$CUI.setState({ replies })
   // }
 
   // clearConditionChoices () {
-  //   this.$MRI.setState({ currentCondition: null })
+  //   this.$CUI.setState({ currentCondition: null })
   // }
 
   // // 显示多选选项
   // showDemoMChoices ({ demoChoices }) {
   //   let mReplies = demoChoices.map(x => ReplyBuilder.demoMChoice(x))
-  //   this.$MRI.setState({ mReplies })
+  //   this.$CUI.setState({ mReplies })
   // }
 
   // refreshMReplies () {
-  //   let { mReplies } = this.$MRI.state
+  //   let { mReplies } = this.$CUI.state
   //   console.log('refreshMReplies', mReplies)
-  //   this.$MRI.setState({ mReplies })
+  //   this.$CUI.setState({ mReplies })
   // }
 
   // clearMReplies () {
-  //   this.$MRI.setState({ mReplies: [] })
+  //   this.$CUI.setState({ mReplies: [] })
   // }
 
   // // 拨轮
   // showWheel (cmdNode) {
-  //   this.$MRI.setState({ wheel: cmdNode })
+  //   this.$CUI.setState({ wheel: cmdNode })
   // }
 
   // clearWheel () {
-  //   this.$MRI.setState({ wheel: null })
+  //   this.$CUI.setState({ wheel: null })
   // }
 
   // // 气泡
   // showHealthBubble (cmdNode) {
-  //   this.$MRI.setState({ bubble: cmdNode })
+  //   this.$CUI.setState({ bubble: cmdNode })
   // }
 
   // clearBubble () {
-  //   this.$MRI.setState({ bubble: null })
+  //   this.$CUI.setState({ bubble: null })
   // }
 }

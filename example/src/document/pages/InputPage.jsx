@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DocumentDemoInput } from '../components/demos'
+import { DocumentDemoInput } from '../demos'
 import Markdown from 'markdown-to-jsx'
 
 const md = `
