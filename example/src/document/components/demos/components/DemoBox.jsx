@@ -3,7 +3,7 @@ import React from 'react'
 import css from './DemoBox.scss'
 
 import PhoneUI from './PhoneUI'
-import CUI from '../../../../../../src/CUI/CUI'
+import { CUI } from '../adapter'
 
 export default class DemoBox extends React.Component {
   render () {

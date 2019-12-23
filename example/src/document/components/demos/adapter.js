@@ -1,5 +1,6 @@
 import duck from '../../../../../src'
 
-const { components } = duck
+const { components, CUI } = duck
 
 export default components
+export { CUI }
