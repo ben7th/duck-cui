@@ -4,7 +4,7 @@ export default ({ typeName, component }) => {
       this.props = props
     }
 
-    base = 'SayAble'
+    base = 'SpeakAble'
     side = 'remote'
     typeName = typeName
     component = component

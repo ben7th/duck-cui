@@ -2,10 +2,10 @@ import React from 'react'
 import css from './Video.scss'
 import ReactPlayer from 'react-player'
 import classNames from 'classnames/bind'
-import FontIcon from '../../components-new/icons/FontIcon'
-import buildSayAble from '../../interfaces/buildSayAble'
+import FontIcon from '../../components/icons/FontIcon'
+import buildSpeakAble from '../../interfaces/buildSpeakAble'
 
-export default buildSayAble({
+export default buildSpeakAble({
   typeName: 'Video',
   component: class extends React.Component {
     render () {

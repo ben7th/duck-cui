@@ -4,8 +4,8 @@ import DemoBox from './components/DemoBox'
 import DemoButton from './components/DemoButton'
 
 import adapter from './adapter'
-const { Says, Appends } = adapter
-const { Loading } = Says
+const { Speaks, Appends } = adapter
+const { Loading } = Speaks
 const { Tip } = Appends
 
 export default class DemoBasic extends React.Component {

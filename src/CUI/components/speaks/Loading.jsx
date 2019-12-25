@@ -1,8 +1,8 @@
 import React from 'react'
 import css from './Loading.scss'
-import buildSayAble from '../../interfaces/buildSayAble'
+import buildSpeakAble from '../../interfaces/buildSpeakAble'
 
-export default buildSayAble({ 
+export default buildSpeakAble({ 
   typeName: 'Loading', 
   component: class extends React.Component {
     render () {

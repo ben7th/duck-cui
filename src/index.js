@@ -1,12 +1,12 @@
-import Says from './CUI/components-new/says'
-import Appends from './CUI/components-new/appends'
-import Covers from './CUI/components-new/covers'
+import Speaks from './CUI/components/speaks'
+import Appends from './CUI/components/appends'
+import Covers from './CUI/components/covers'
 
 import CUI from './CUI/CUI'
 
 const Duck = {
   Components: {
-    Says, Appends, Covers
+    Speaks, Appends, Covers
   },
   CUI
 }

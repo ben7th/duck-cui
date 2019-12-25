@@ -2,10 +2,10 @@ import React from 'react'
 import css from './Audio.scss'
 import ReactPlayer from 'react-player'
 import classNames from 'classnames/bind'
-import FontIcon from '../../components-new/icons/FontIcon'
-import buildSayAble from '../../interfaces/buildSayAble'
+import FontIcon from '../icons/FontIcon'
+import buildSpeakAble from '../../interfaces/buildSpeakAble'
 
-export default buildSayAble({
+export default buildSpeakAble({
   typeName: 'Audio',
   component: class extends React.Component {
     render () {

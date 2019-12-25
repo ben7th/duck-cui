@@ -1,9 +1,9 @@
 import React from 'react'
 import css from './Text.scss'
 import MarkdownIt from 'markdown-it'
-import buildSayAble from '../../interfaces/buildSayAble'
+import buildSpeakAble from '../../interfaces/buildSpeakAble'
 
-export default buildSayAble({ 
+export default buildSpeakAble({ 
   typeName: 'Text', 
   component: class extends React.Component {
     render () {

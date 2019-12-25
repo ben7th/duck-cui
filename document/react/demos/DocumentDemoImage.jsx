@@ -4,8 +4,8 @@ import DemoBox from './components/DemoBox'
 import DemoButton from './components/DemoButton'
 
 import adapter from './adapter'
-const { Says, Appends } = adapter
-const { Image } = Says
+const { Speaks, Appends } = adapter
+const { Image } = Speaks
 const { Tip } = Appends
 
 import i1 from './assets/duck.png'

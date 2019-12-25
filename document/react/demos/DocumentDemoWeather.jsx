@@ -4,8 +4,8 @@ import DemoBox from './components/DemoBox'
 import DemoButton from './components/DemoButton'
 
 import adapter from './adapter'
-const { Says, Covers } = adapter
-const { Loading, Text } = Says
+const { Speaks, Covers } = adapter
+const { Loading, Text } = Speaks
 const { Input } = Covers
 
 import getForecast from '../../api/heweather'
@@ -28,8 +28,8 @@ export default class DemoBasic extends React.Component {
   async demo () {
     await this.cuic.removeAll()
 
-    await this.loadingAndSay({ text: '小鸭可以帮你查询天气' })
-    await this.loadingAndSay({ text: '输入城市名喔' })
+    await this.loadingAndSpeak({ text: '小鸭可以帮你查询天气' })
+    await this.loadingAndSpeak({ text: '输入城市名喔' })
 
     let input = new Input({ 
       placeholder: '输入城市名',
@@ -47,7 +47,7 @@ export default class DemoBasic extends React.Component {
     await this.cuic.cover(input)
   }
 
-  async loadingAndSay ({ text }) {
+  async loadingAndSpeak ({ text }) {
     await this.cuic.append(new Loading())
     await this.cuic.waitFor({ duration: 500 })
     await this.cuic.removeLast({ typeName: 'Loading' })

@@ -2,7 +2,7 @@ import React from 'react'
 import css from './Input.scss'
 
 import TextareaAutosize from 'react-textarea-autosize'
-import FontIcon from '../../components-new/icons/FontIcon'
+import FontIcon from '../../components/icons/FontIcon'
 
 import buildCoverAble from '../../interfaces/buildCoverAble'
 

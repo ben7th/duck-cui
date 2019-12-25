@@ -14,7 +14,7 @@ const indexData = [
   { title: '组件', children: [
     { title: 'AppendAble', children: [
       { title: 'Tip', path: '/AppendAble/Tip', component: pages.TipPage },
-      { title: 'SayAble', children: [
+      { title: 'SpeakAble', children: [
         { title: 'Loading', path: '/AppendAble/Loading', component: pages.LoadingPage },
         { title: 'Text', path: '/AppendAble/Text', component: pages.TextPage },
         { title: 'Image', path: '/AppendAble/Image', component: pages.ImagePage },

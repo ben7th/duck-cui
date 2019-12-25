@@ -3,8 +3,8 @@ import css from './CUI.scss'
 
 import CUIBackground from './CUIBackground'
 
-import AppendItems from './components-new/AppendItems'
-import CoverItems from './components-new/CoverItems'
+import AppendItems from './components/AppendItems'
+import CoverItems from './components/CoverItems'
 
 import CUIContext from './context/CUIContext'
 

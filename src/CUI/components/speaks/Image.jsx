@@ -1,8 +1,8 @@
 import React from 'react'
 import css from './Image.scss'
-import buildSayAble from '../../interfaces/buildSayAble'
+import buildSpeakAble from '../../interfaces/buildSpeakAble'
 
-export default buildSayAble({
+export default buildSpeakAble({
   typeName: 'Image',
   component: class extends React.Component {
     render () {
