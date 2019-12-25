@@ -2,11 +2,21 @@
 
 ## 迭代记录
 
+### 2019-12-25
+
+- 添加 favicon, 使用 <https://www.pixilart.com/> 绘制
+- 调整 cui context 获取方式为 callback 方式
+
+### 2019-12-24
+
+- 打包问题相关讨论  
+  <https://github.com/webpack/webpack/issues/7353>
+
 ### 2019-12-23
 
 - 拆分 demo 打包和组件库打包
   - 目的：隔离引用路径，简化引用，解耦
-- 给各个组件撰写参数说明
+- 给各个组件撰写参数和方法说明
 
 ### 2019-12-22
 

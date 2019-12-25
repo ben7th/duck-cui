@@ -1,5 +1,5 @@
 // development
-import duck from '../../../../src'
+import duck from "../../../src"
 
 // production
 // import duck from 'duck-cui'

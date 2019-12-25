@@ -35,7 +35,7 @@ export default class DemoBasic extends React.Component {
 
   async loadingAndSay ({ text }) {
     await this.cuic.append(new Loading())
-    await this.cuic.waitFor({ duration: 1000 })
+    await this.cuic.waitFor({ duration: 500 })
     await this.cuic.removeLast({ typeName: 'Loading' })
     await this.cuic.append(new Text({ text }).setSide('remote'))
   }

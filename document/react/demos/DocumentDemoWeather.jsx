@@ -8,7 +8,7 @@ const { Says, Covers } = adapter
 const { Loading, Text } = Says
 const { Input } = Covers
 
-import getForecast from '../api/heweather'
+import getForecast from '../../api/heweather'
 
 export default class DemoBasic extends React.Component {
   render () {

@@ -25,6 +25,9 @@ export default class CUI extends React.Component {
   }
 
   componentDidMount () {
-    this.context = new CUIContext({ $CUI: this })
+    let context = new CUIContext({ $CUI: this })
+    if (this.props.ready) {
+      this.props.ready(context)
+    }
   }
 }

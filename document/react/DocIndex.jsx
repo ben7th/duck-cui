@@ -1,5 +1,5 @@
 import React from 'react'
-import css from './index.scss'
+import css from './DocIndex.scss'
 
 import { BrowserRouter, Route, NavLink } from 'react-router-dom'
 
