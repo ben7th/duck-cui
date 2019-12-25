@@ -4,7 +4,7 @@ import css from './CoverItems.scss'
 
 export default class CoverItems extends React.Component {
   render () {
-    let children = this.props.coverItems.map((x, idx) => {
+    let _children = this.props.coverItems.map((x, idx) => {
       if (x.base === 'CoverAble') {
         return <div className={ css.CoverAble } key={ idx }>
           { React.createElement(x.component, { ...x.props, ref: (node) => {
@@ -14,8 +14,6 @@ export default class CoverItems extends React.Component {
       }
     })
 
-    return <div className={ css.CoverItems }>
-      { children }
-    </div>
+    return _children
   }
 }

@@ -13,7 +13,11 @@ export default class CUIContext {
     this.$CUI = $CUI
   }
 
-  // 新方法
+  // 设置背景内容
+  async setBackgroundContent ({ content }) {
+    console.log(content)
+    this.$CUI.setState({ _backgroundLayerContent: content })
+  }
 
   // 添加 AppendAble 到 cui
   async append (appendAble) {

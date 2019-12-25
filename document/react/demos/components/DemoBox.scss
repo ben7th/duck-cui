@@ -1,5 +1,13 @@
 @import '../css/docvars';
 
+@mixin fillBox {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+$BackgroundColorTop: lighten(#f7e93a, 35%);
+$BackgroundColorBottom: lighten(#e6c20e, 35%);
+
 .DemoBox {
   display: flex;
   border: $DocumentBlockBorderStyle;
@@ -9,7 +17,40 @@
   .control {
     padding-left: 2rem;
   }
-  // * {
-  //   box-sizing: content-box !important;
-  // }
+}
+
+.customBg {
+  @include fillBox;
+
+  .bg {
+    @include fillBox;
+    background: linear-gradient($BackgroundColorTop, $BackgroundColorBottom);
+    pointer-events: none;
+  }
+  
+  .topshadow {
+    background: linear-gradient(rgba(black, 0.6), transparent);
+    position: absolute;
+    top:0; left:0; right:0; height: .3rem;
+    z-index: 99;
+    pointer-events: none;
+  }
+  
+  .imgbg {
+    position: fixed;
+    left: 250px;
+    width: 500px;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
 }

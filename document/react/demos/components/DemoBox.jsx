@@ -14,7 +14,7 @@ export default class DemoBox extends React.Component {
     return <div className={ css.DemoBox }>
       <div className={ css.phone }>
         <PhoneUI size={ this.props.size }>
-          <CUI ready={ context => this.cuic = context } />
+          <CUI ready={ context => this.onReady(context) } />
         </PhoneUI>
       </div>
       <div className={ css.control }>
@@ -22,4 +22,19 @@ export default class DemoBox extends React.Component {
       </div>
     </div>
   }
+
+  onReady (context) {
+    this.cuic = context
+
+    let content = <div className={ css.customBg }>
+      <div className={ css.bg }></div>
+      <div className={ css.topshadow }></div>
+      <div className={ css.imgbg }>
+        {/* <img src={ bg } /> */}
+      </div>
+    </div>
+
+    this.cuic.setBackgroundContent({ content })
+  }
 }
+
