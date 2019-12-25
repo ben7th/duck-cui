@@ -10,6 +10,7 @@ import TipPage from './TipPage'
 import PickerPage from './PickerPage'
 import VideoPage from './VideoPage'
 import WeatherPage from './WeatherPage'
+import BackgroundLayerPage from './BackgroundLayerPage'
 
 export default {
   IntroPage,
@@ -23,5 +24,6 @@ export default {
   TipPage,
   PickerPage,
   VideoPage,
-  WeatherPage
+  WeatherPage,
+  BackgroundLayerPage,
 }

@@ -722,9 +722,11 @@
 
 .markdown-body .highlight pre,
 .markdown-body pre {
-  background-color: #f6f8fa;
+  // background-color: #f6f8fa;
+  // background-color: #2b2b2b;
   border-radius: 3px;
-  font-size: 85%;
+  // font-size: 85%;
+  font-size: 100%;
   line-height: 1.45;
   overflow: auto;
   padding: 16px;

@@ -12,6 +12,7 @@ const indexData = [
     { title: '天气查询', path: '/advanced/weather', component: pages.WeatherPage }
   ] },
   { title: '组件', children: [
+    { title: 'BackgroundLayer', path: '/BackgroundLayer', component: pages.BackgroundLayerPage },
     { title: 'AppendAble', children: [
       { title: 'Tip', path: '/AppendAble/Tip', component: pages.TipPage },
       { title: 'SpeakAble', children: [

@@ -27,11 +27,17 @@ const devConfig = {
     rules: [
       {
         test: /\.css$/,
-        exclude: /\.min\.css$/,
+        exclude: [
+          /\.min\.css$/,
+          /prismjs(.+)\.css$/
+        ],
         loader: ['style-loader', 'css-loader?modules'],
       },
       {
-        test: /\.min\.css$/,
+        test: [
+          /\.min\.css$/,
+          /prismjs(.+)\.css$/
+        ],
         loader: ['style-loader', 'css-loader'],
       },
       {

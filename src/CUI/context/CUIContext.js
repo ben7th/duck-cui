@@ -15,7 +15,6 @@ export default class CUIContext {
 
   // 设置背景内容
   async setBackgroundContent ({ content }) {
-    console.log(content)
     this.$CUI.setState({ _backgroundLayerContent: content })
   }
 

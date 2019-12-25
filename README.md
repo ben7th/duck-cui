@@ -6,6 +6,8 @@
 
 - 添加 favicon, 使用 <https://www.pixilart.com/> 绘制
 - 调整 cui context 获取方式为 callback 方式
+- 增加 BackgroundLayer
+- 增加文档代码高亮
 
 ### 2019-12-24
 

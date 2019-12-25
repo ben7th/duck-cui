@@ -16,7 +16,7 @@ Picker 用于在数据序列中选择数据。
 
 ## 数据列表结构示例
 
-\`\`\`js
+\`\`\`javascript
 const data = [
   [
     { label: '矿泉水/纯净水', value: '1' },
