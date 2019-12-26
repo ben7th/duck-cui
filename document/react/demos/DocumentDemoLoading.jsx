@@ -31,8 +31,8 @@ export default class DemoBasic extends React.Component {
   }
 
   async appendLoading () {
-    await this.cuic.append(new Loading().setSide('remote'))
-    await this.cuic.append(new Loading().setSide('local'))
+    await this.cuic.append(new Loading({ speaker: 'duck' }))
+    await this.cuic.append(new Loading({ speaker: 'slime' }))
   }
 
   async removeLast () {

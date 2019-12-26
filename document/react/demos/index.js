@@ -12,6 +12,7 @@ import DocumentDemoChoices from './DocumentDemoChoices'
 import DocumentDemoPicker from './DocumentDemoPicker'
 
 import DocumentDemoWeather from './DocumentDemoWeather'
+import DocumentDemoBackgroundLayer from './DocumentDemoBackgroundLayer'
 
 export { 
   DocumentDemoBasic, 
@@ -26,4 +27,5 @@ export {
   DocumentDemoChoices,
   DocumentDemoPicker,
   DocumentDemoWeather,
+  DocumentDemoBackgroundLayer,
 }

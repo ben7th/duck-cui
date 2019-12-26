@@ -24,13 +24,13 @@ export default class extends React.Component {
   }
 
   async demo () {
-    await this.cuic.append(new Text({ text: '你喜欢什么水果鸭？' }))
+    await this.cuic.append(new Text({ text: '你喜欢什么水果鸭？', speaker: 'duck' }))
 
     let cs = new Choices({ items: [
       '西瓜', '苹果', '橘子', '樱桃', '芒果', '哈密瓜', '猕猴桃'
     ] })
     cs.on('select', async x => {
-      await this.cuic.append(new Text({ text: x }).setSide('local'))
+      await this.cuic.append(new Text({ text: x, speaker: 'slime' }))
     })
     await this.cuic.cover(cs)
   }

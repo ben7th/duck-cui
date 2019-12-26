@@ -1,5 +1,4 @@
 import ChatItemBuilder from './ChatItemBuilder'
-import ReplyBuilder from './ChatReplyBuilder'
 
 import Scroll from 'react-scroll'
 // https://www.npmjs.com/package/react-scroll
@@ -16,6 +15,13 @@ export default class CUIContext {
   // 设置背景内容
   async setBackgroundContent ({ content }) {
     this.$CUI.setState({ _backgroundLayerContent: content })
+  }
+
+  // 添加说话人
+  async addSpeaker (speaker) {
+    let { _speakers } = this.$CUI.state
+    _speakers[speaker.id] = speaker
+    this.$CUI.setState({ _speakers })
   }
 
   // 添加 AppendAble 到 cui

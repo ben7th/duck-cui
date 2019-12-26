@@ -65,7 +65,7 @@ export default class DemoBasic extends React.Component {
       '# 啊啊啊~'
     ].join('\n')
 
-    await this.cuic.append(new Text({ markdown }))
+    await this.cuic.append(new Text({ markdown, speaker: 'duck' }))
   }
 
   async appendLocal () {
@@ -73,7 +73,7 @@ export default class DemoBasic extends React.Component {
       '## *不错喔*  '
     ].join('\n')
 
-    await this.cuic.append(new Text({ markdown }).setSide('local'))
+    await this.cuic.append(new Text({ markdown, speaker: 'duck' }))
   }
 
   async mdTitle () {
@@ -84,7 +84,7 @@ export default class DemoBasic extends React.Component {
       '#### title 4',
       '##### title 5',
       '###### title 6',
-    ].join('\n') }))
+    ].join('\n'), speaker: 'duck' }))
   }
 
   async mdTextStyle () {
@@ -93,7 +93,7 @@ export default class DemoBasic extends React.Component {
       '*斜体*  ',
       '***粗斜体***  ',
       '~~删除线~~  ',
-    ].join('\n') }))
+    ].join('\n'), speaker: 'duck' }))
   }
 
   async mdQuote () {
@@ -102,7 +102,7 @@ export default class DemoBasic extends React.Component {
       '> 引用  ',
       '>> 引用引用  ',
       '>>> 引用引用引用  ',
-    ].join('\n') }))
+    ].join('\n'), speaker: 'duck' }))
   }
 
   async mdUList () {
@@ -113,7 +113,7 @@ export default class DemoBasic extends React.Component {
       '- 甘蔗',
       '   - 柚子',
       '   - 西瓜'
-    ].join('\n') }))
+    ].join('\n'), speaker: 'duck' }))
   }
   
   async mdOList () {
@@ -124,7 +124,7 @@ export default class DemoBasic extends React.Component {
       '4. 甘蔗',
       '   1. 柚子',
       '   2. 西瓜'
-    ].join('\n') }))
+    ].join('\n'), speaker: 'slime' }))
   }
 
   async mdTable () {
@@ -134,7 +134,7 @@ export default class DemoBasic extends React.Component {
       '|五月|北京|',
       '|十月|杭州|',
       '|十一月|广州|',
-    ].join('\n') }))
+    ].join('\n'), speaker: 'duck' }))
   }
 
   async removeLast () {

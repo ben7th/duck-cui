@@ -20,9 +20,9 @@ export default class extends React.Component {
   }
 
   async demo () {
-    this.cuic.append(new Text({ text: '这些是不同长度的音频喔' }))
-    this.cuic.append(new Audio({ url: 'https://tna-upload.oss-cn-shanghai.aliyuncs.com/vultr-upload/2019-10-16/8bit/music.mp3' }))
-    this.cuic.append(new Audio({ url: 'https://tna-upload.oss-cn-shanghai.aliyuncs.com/vultr-upload/2019-10-10/%E8%B6%85%E6%83%91%E6%98%9F%E6%88%98%E8%AE%B0-area1-8bit.mp3' }))
-    this.cuic.append(new Audio({ url: 'https://tna-upload.oss-cn-shanghai.aliyuncs.com/vultr-upload/2019-10-10/NieR%20Automata%20OST-The%20Weight%20of%20the%20World%20ENG.mp3'}))
+    this.cuic.append(new Text({ text: '这些是不同长度的音频喔', speaker: 'duck' }))
+    this.cuic.append(new Audio({ url: 'https://tna-upload.oss-cn-shanghai.aliyuncs.com/vultr-upload/2019-10-16/8bit/music.mp3', speaker: 'duck' }))
+    this.cuic.append(new Audio({ url: 'https://tna-upload.oss-cn-shanghai.aliyuncs.com/vultr-upload/2019-10-10/%E8%B6%85%E6%83%91%E6%98%9F%E6%88%98%E8%AE%B0-area1-8bit.mp3', speaker: 'duck' }))
+    this.cuic.append(new Audio({ url: 'https://tna-upload.oss-cn-shanghai.aliyuncs.com/vultr-upload/2019-10-10/NieR%20Automata%20OST-The%20Weight%20of%20the%20World%20ENG.mp3', speaker: 'duck' }))
   }
 }

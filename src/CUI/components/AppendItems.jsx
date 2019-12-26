@@ -2,9 +2,12 @@ import React from 'react'
 import css from './AppendItems.scss'
 import AppendAbleItem from './AppendAbleItem'
 
-export default ({ appendItems }) => {
+export default ({ speakers, appendItems }) => {
   let children = appendItems.map((x, idx) => {
-    return <AppendAbleItem data={ x } key={ idx } />
+    return <AppendAbleItem 
+      speakers={ speakers } 
+      data={ x } key={ idx } 
+    />
   })
 
   return (

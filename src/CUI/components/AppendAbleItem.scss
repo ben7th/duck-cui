@@ -21,11 +21,11 @@
     border-radius: $ChatBubblBorderRadius;
   }
 
-  &.side-remote {
+  &.side-left {
     flex-direction: row;
   }
 
-  &.side-local {
+  &.side-right {
     flex-direction: row-reverse;
     img {
       // display: none;
@@ -44,10 +44,10 @@
       padding: 0;
       overflow: hidden;
     }
-    &.side-remote .box {
+    &.side-left .box {
       margin-right: $ImageMarginScreen;
     }
-    &.side-local .box {
+    &.side-right .box {
       margin-left: $ImageMarginScreen;
     }
   }

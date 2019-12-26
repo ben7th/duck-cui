@@ -1,0 +1,52 @@
+@import './css/vars';
+
+@keyframes nosp {
+  0% { background-color: red; }
+  50% { background-color: lighten(red, 40%); }
+  100% { background-color: red; }
+}
+
+.avatarBox {
+  width: $AvatarSize; 
+  height: $AvatarSize;
+  border-radius: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  flex: 0 0 $AvatarSize;
+
+  &.side-left {
+    margin-right: $AvatarBubbleMargin;
+  }
+
+  &.side-right {
+    margin-left: $AvatarBubbleMargin;
+  }
+
+  .avatar {
+    width: $AvatarSize; 
+    height: $AvatarSize;
+  
+    &.noSpeaker {
+      background-color: red;
+      animation: nosp .5s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  
+      &:before {
+        content: "";
+        width: 4px; height: 12px;
+        background-color: #fff;
+        border-radius: 100px;
+        margin-bottom: 4px;
+      }
+      &:after {
+        content: "";
+        width: 4px; height: 4px;
+        background-color: #fff;
+        border-radius: 100px;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DocumentDemoImage } from '../demos'
+import { DocumentDemoBackgroundLayer } from '../demos'
 import DocumentMarkdown from '../demos/DocumentMarkdown'
 
 const md = `
@@ -34,7 +34,7 @@ this.cuic.setBackgroundContent({ content })
 export default class LoadingDemo extends React.Component {
   render () {
     return <DocumentMarkdown
-      overrides={ { Demo: DocumentDemoImage } }
+      overrides={ { Demo: DocumentDemoBackgroundLayer } }
     >{ md }</DocumentMarkdown>
   }
 }

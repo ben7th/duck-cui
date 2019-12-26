@@ -96,7 +96,7 @@ export default class extends React.Component {
 
   async d1 () {
     await this._reset()
-    await this.cuic.append(new Text({ text: '你喜欢哪种饮料鸭？' }))
+    await this.cuic.append(new Text({ text: '你喜欢哪种饮料鸭？', speaker: 'duck' }))
 
     let picker = new Picker({ data: d1data })
     picker.on('send', data => {
@@ -108,7 +108,7 @@ export default class extends React.Component {
   async d2 () {
     await this._reset()
 
-    await this.cuic.append(new Text({ text: '你是什么生肖？什么血型？' }))
+    await this.cuic.append(new Text({ text: '你是什么生肖？什么血型？', speaker: 'duck' }))
 
     let picker = new Picker({ data: d2data })
     picker.on('send', data => {
@@ -120,7 +120,7 @@ export default class extends React.Component {
   async d3 () {
     await this._reset()
 
-    await this.cuic.append(new Text({ text: '请选择你的甜点套餐搭配' }))
+    await this.cuic.append(new Text({ text: '请选择你的甜点套餐搭配', speaker: 'duck' }))
 
     let picker = new Picker({ data: d3data })
     picker.on('send', data => {

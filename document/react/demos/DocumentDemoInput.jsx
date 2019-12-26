@@ -24,7 +24,7 @@ export default class extends React.Component {
   }
 
   async demo () {
-    await this.cuic.append(new Text({ text: '说点啥呗~' }))
+    await this.cuic.append(new Text({ text: '说点啥呗~', speaker: 'duck' }))
 
     let input = new Input({ 
       placeholder: '请输入……',
@@ -32,9 +32,9 @@ export default class extends React.Component {
     })
     .on('send', async (evt) => {
       let { value } = evt
-      await this.cuic.append(new Text({ text: value }).setSide('local'))
+      await this.cuic.append(new Text({ text: value, speaker: 'slime' }))
       await input.$context.clear()
-      await this.cuic.append(new Text({ text: '好鸭' }))
+      await this.cuic.append(new Text({ text: '好鸭', speaker: 'duck' }))
     })
 
     await this.cuic.cover(input)

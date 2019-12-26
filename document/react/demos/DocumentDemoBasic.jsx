@@ -34,9 +34,9 @@ export default class DemoBasic extends React.Component {
   }
 
   async loadingAndSpeak ({ text }) {
-    await this.cuic.append(new Loading())
+    await this.cuic.append(new Loading({ speaker: 'duck' }))
     await this.cuic.waitFor({ duration: 500 })
     await this.cuic.removeLast({ typeName: 'Loading' })
-    await this.cuic.append(new Text({ text }).setSide('remote'))
+    await this.cuic.append(new Text({ text, speaker: 'duck' }))
   }
 }

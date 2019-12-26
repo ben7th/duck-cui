@@ -35,11 +35,11 @@ export default class DemoBasic extends React.Component {
   }
 
   async appendRemote () {
-    await this.cuic.append(new Text({ text: 'hello' }))
+    await this.cuic.append(new Text({ text: 'hello', speaker: 'duck' }))
   }
 
   async appendLocal () {
-    await this.cuic.append(new Text({ text: '你好' }).setSide('local'))
+    await this.cuic.append(new Text({ text: '你好', speaker: 'slime' }))
   }
 
   async removeLast () {

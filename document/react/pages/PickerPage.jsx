@@ -22,7 +22,7 @@ const data = [
     { label: '矿泉水/纯净水', value: '1' },
     { label: '可乐', value: '2' },
     { label: '柠檬茶', value: '3' },
-    { label: '咖啡', value: '4', selected: true},
+    { label: '咖啡', value: '4', selected: true },
     { label: '茶叶', value: '5' },
     { label: '果汁', value: '6' },
     { label: '酒', value: '7' },

@@ -9,16 +9,24 @@ import CUIContext from './context/CUIContext'
 
 export default class CUI extends React.Component {
   state = {
+    // 说话人
+    _speakers: {},
+
+    // 背景层内容
     _backgroundLayerContent: null,
+
     appendItems: [],
     coverItems: [],
   }
 
   render () {
     return <>
+      <BackgroundLayer>{ this.state._backgroundLayerContent }</BackgroundLayer>
       <div className={ css.CUI } id='MRI-Scroller'>
-        <BackgroundLayer>{ this.state._backgroundLayerContent }</BackgroundLayer>
-        <AppendItems appendItems={ this.state.appendItems } />
+        <AppendItems 
+          speakers={ this.state._speakers} 
+          appendItems={ this.state.appendItems } 
+        />
         <CoverItems coverItems={ this.state.coverItems } />
       </div>
     </>

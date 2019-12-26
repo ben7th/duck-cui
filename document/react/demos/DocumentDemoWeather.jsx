@@ -38,7 +38,7 @@ export default class DemoBasic extends React.Component {
       console.log(evt)
       let { value } = evt
       let location = value
-      await this.cuic.append(new Text({ text: value }).setSide('local'))
+      await this.cuic.append(new Text({ text: value, speaker: 'slime' }))
       await input.$context.clear()
       await this.cuic._scrollToBottom()
       await this.queryWeather({ location })
@@ -48,15 +48,15 @@ export default class DemoBasic extends React.Component {
   }
 
   async loadingAndSpeak ({ text }) {
-    await this.cuic.append(new Loading())
+    await this.cuic.append(new Loading({ speaker: 'duck' }))
     await this.cuic.waitFor({ duration: 500 })
     await this.cuic.removeLast({ typeName: 'Loading' })
-    await this.cuic.append(new Text({ text }).setSide('remote'))
+    await this.cuic.append(new Text({ text, speaker: 'duck' }))
     await this.cuic._scrollToBottom()
   }
 
   async queryWeather ({ location }) {
-    await this.cuic.append(new Loading())
+    await this.cuic.append(new Loading({ speaker: 'duck' }))
     await this.cuic._scrollToBottom()
 
     let p = Promise.all([ 
@@ -70,12 +70,12 @@ export default class DemoBasic extends React.Component {
     await this.cuic.removeLast({ typeName: 'Loading' })
 
     if (data[0].status === 'unknown location') {
-      await this.cuic.append(new Text({ text: `没有查到 ${location} 这个城市喔` }).setSide('remote'))
+      await this.cuic.append(new Text({ text: `没有查到 ${location} 这个城市喔`, speaker: 'duck' }))
     }
 
     if (data[0].basic) {
       let l = data[0].basic.location
-      await this.cuic.append(new Text({ text: `查到啦，${l}的天气是：` }).setSide('remote'))
+      await this.cuic.append(new Text({ text: `查到啦，${l}的天气是：`, speaker: 'duck' }))
       await this.cuic._scrollToBottom()
 
       let d = data[0].daily_forecast.map(x => {
@@ -90,13 +90,13 @@ export default class DemoBasic extends React.Component {
 
       console.log(d)
 
-      await this.cuic.append(new Loading())
+      await this.cuic.append(new Loading({ speaker: 'duck' }))
       await this.cuic._scrollToBottom()
       await this.cuic.waitFor({ duration: 500 })
       await this.cuic.removeLast({ typeName: 'Loading' })
       await this.cuic.append(new Text({ 
-        markdown: `${d.join('\n')}` 
-      }).setSide('remote'))
+        markdown: `${d.join('\n')}`, speaker: 'duck' 
+      }))
 
       await this.cuic._scrollToBottom()
     }

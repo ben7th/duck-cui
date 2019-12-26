@@ -3,7 +3,10 @@ import React from 'react'
 import css from './DemoBox.scss'
 
 import PhoneUI from './PhoneUI'
-import { CUI } from '../adapter'
+import { CUI, Speaker } from '../adapter'
+
+import duckAvatar from '../assets/duck-avatar.png'
+import slimeAvatar from '../assets/slime-avatar.jpg'
 
 export default class DemoBox extends React.Component {
   constructor (props) {
@@ -35,6 +38,20 @@ export default class DemoBox extends React.Component {
     </div>
 
     this.cuic.setBackgroundContent({ content })
+
+    this.cuic.addSpeaker(new Speaker({ 
+      id: 'duck', 
+      avatarURL: duckAvatar, 
+      name: '鸭鸭', 
+      side: 'left'
+    }))
+
+    this.cuic.addSpeaker(new Speaker({ 
+      id: 'slime', 
+      avatarURL: slimeAvatar, 
+      name: '史莱姆', 
+      side: 'right'
+    }))
   }
 }
 

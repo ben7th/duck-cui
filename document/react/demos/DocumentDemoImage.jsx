@@ -38,11 +38,11 @@ export default class DemoBasic extends React.Component {
   }
 
   async appendRemote () {
-    await this.cuic.append(new Image({ src: i1 }))
+    await this.cuic.append(new Image({ src: i1, speaker: 'duck' }))
   }
 
   async appendLocal () {
-    await this.cuic.append(new Image({ src: i2 }).setSide('local'))
+    await this.cuic.append(new Image({ src: i2, speaker: 'slime' }))
   }
 
   async removeLast () {
