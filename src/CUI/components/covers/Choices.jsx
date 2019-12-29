@@ -7,11 +7,13 @@ export default buildCoverAble({
   component: class extends React.Component {
     render () {
       let _items = this.props.items.map((x, idx) => {
+        let { label } = x
+
         return <button 
           className={ css.choice } 
-          key={idx}
+          key={ idx }
           onClick={ evt => this._select(x) }
-        >{ x }</button>
+        >{ label }</button>
       })
 
       return <div className={ css.Choices }>

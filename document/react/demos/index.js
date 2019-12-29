@@ -9,6 +9,7 @@ import DocumentDemoVideo from './DocumentDemoVideo'
 
 import DocumentDemoInput from './DocumentDemoInput'
 import DocumentDemoChoices from './DocumentDemoChoices'
+import DocumentDemoMultiChoices from './DocumentDemoMultiChoices'
 import DocumentDemoPicker from './DocumentDemoPicker'
 
 import DocumentDemoWeather from './DocumentDemoWeather'
@@ -25,6 +26,7 @@ export {
   DocumentDemoVideo,
   DocumentDemoInput,
   DocumentDemoChoices,
+  DocumentDemoMultiChoices,
   DocumentDemoPicker,
   DocumentDemoWeather,
   DocumentDemoBackgroundLayer,

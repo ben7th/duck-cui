@@ -13,6 +13,10 @@
 .Video {
   position: relative;
 
+  .rplayer {
+    display: flex;
+  }
+
   &.loading {
     background-color: #fff;
     padding: $ChatBubblePadding;

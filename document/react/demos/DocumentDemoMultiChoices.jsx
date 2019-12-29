@@ -6,7 +6,7 @@ import DemoButton from './components/DemoButton'
 import adapter from './adapter'
 const { Speaks, Appends, Covers } = adapter
 const { Loading, Text } = Speaks
-const { Choices } = Covers
+const { MultiChoices } = Covers
 
 export default class extends React.Component {
   render () {
@@ -24,21 +24,23 @@ export default class extends React.Component {
   }
 
   async demo () {
-    await this.cuic.append(new Text({ text: '你喜欢什么水果鸭？', speaker: 'duck' }))
+    await this.cuic.append(new Text({ text: '你休闲时会做什么鸭？', speaker: 'duck' }))
 
     let items = [
-      { label: '西瓜', id: 1 },
-      { label: '苹果', id: 2 },
-      { label: '橘子', id: 3 },
-      { label: '樱桃', id: 4 },
-      { label: '芒果', id: 5 },
-      { label: '哈密瓜', id: 6 },
-      { label: '猕猴桃', id: 7 },
+      { label: '看电视', id: 1 },
+      { label: '听音乐', id: 2 },
+      { label: '看电影', id: 3 },
+      { label: '听广播', id: 4 },
+      { label: '看书', id: 5 },
+      { label: '上网', id: 6 },
+      { label: '找人聊天', id: 7 },
     ]
 
-    let cs = new Choices({ items })
-    cs.on('select', async x => {
-      await this.cuic.append(new Text({ text: x.label, speaker: 'slime' }))
+    let cs = new MultiChoices({ items })
+    cs.on('send', async x => {
+      let { selectedItems } = x
+      let str = selectedItems.map(x => x.label).join("、")
+      await this.cuic.append(new Text({ text: str, speaker: 'slime' }))
     })
     await this.cuic.cover(cs)
   }

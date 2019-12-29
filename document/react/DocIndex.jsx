@@ -28,6 +28,7 @@ const indexData = [
     { title: 'CoverAble', children: [
       { title: 'Input', path: '/CoverAble/Input', component: pages.InputPage },
       { title: 'Choices', path: '/CoverAble/Choices', component: pages.ChoicesPage },
+      { title: 'MultiChoicesPage', path: '/CoverAble/MultiChoices', component: pages.MultiChoicesPage },
       { title: 'Picker', path: '/CoverAble/Picker', component: pages.PickerPage },
       { title: 'ImagePreviewer' }
     ] },

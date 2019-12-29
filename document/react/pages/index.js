@@ -6,6 +6,7 @@ import ImagePage from './ImagePage'
 import InputPage from './InputPage'
 import AudioPage from './AudioPage'
 import ChoicesPage from './ChoicesPage'
+import MultiChoicesPage from './MultiChoicesPage'
 import TipPage from './TipPage'
 import PickerPage from './PickerPage'
 import VideoPage from './VideoPage'
@@ -26,4 +27,5 @@ export default {
   VideoPage,
   WeatherPage,
   BackgroundLayerPage,
+  MultiChoicesPage,
 }

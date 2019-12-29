@@ -1,0 +1,74 @@
+@import '../css/vars';
+
+.MultiChoices {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: $ChoicesBackgroundColor;
+  padding: $ChoiceMargin;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: 1fr 40px;
+
+  .items {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    button {
+      outline: none;
+      cursor: pointer;
+      border: 0 none;
+  
+      padding: $ChoicePadding;
+      color: $ChoiceTextColor;
+      font-size: $ChoiceFontSize;
+      border-radius: $ChoiceBorderRadius;
+      margin: $ChoiceMargin;
+      pointer-events: all;
+      box-shadow: $ChatBubbleBoxShadow;
+
+      background-color: grayscale($ChoiceBackgroundColor);
+      opacity: 0.6;
+      transform: scale(0.9);
+
+      transition: 
+        transform .3s ease, 
+        background-color .3s ease,
+        opacity .3s ease;
+
+      &.selected {
+        opacity: 1;
+        transform: scale(1);
+        background-color: $ChoiceBackgroundColor;
+      }
+    }
+  }
+
+  .sendbtn {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 4px;
+
+    button.send {
+      background-color: $InputSendBtnBackgroundColor;
+      color: $InputSendBtnColor;
+      border: 0 none;
+      outline: none;
+      cursor: pointer;
+      width: $InputSendBtnSize; height: $InputSendBtnSize;
+      border-radius: 100%;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color ease .3s;
+      pointer-events: all;
+
+      &:disabled {
+        background-color: rgba(grayscale($InputSendBtnBackgroundColor), 0.3);
+        pointer-events: none;
+      }
+    }
+  }
+}
