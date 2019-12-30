@@ -26,17 +26,16 @@ export default class DemoBasic extends React.Component {
   async demo () {
     await this.cuic.removeAll()
 
-    await this.loadingAndSpeak({ text: '你好，我是小黄鸭鸭' })
-    await this.loadingAndSpeak({ text: '当你遇到问题想不明白时，可以和我讲讲鸭' })
-    await this.loadingAndSpeak({ text: '虽然我回答不了你的问题，但是讲出来你就更容易自己想清楚鸭' })
-    await this.loadingAndSpeak({ text: '多和小伙伴聊天，不要总是自己闷着工作鸭' })
+    await this.loadingAndSpeak('你好，我是小黄鸭鸭')
+    await this.loadingAndSpeak('当你遇到问题想不明白时，可以和我讲讲鸭')
+    await this.loadingAndSpeak('虽然我回答不了你的问题，但是讲出来你就更容易自己想清楚鸭')
+    await this.loadingAndSpeak('多和小伙伴聊天，不要总是自己闷着工作鸭')
     await this.cuic.append(new Tip({ text: '演示完啦，想再看就点“再走一个”' }))
   }
 
-  async loadingAndSpeak ({ text }) {
-    await this.cuic.append(new Loading({ speaker: 'duck' }))
-    await this.cuic.waitFor({ duration: 500 })
-    await this.cuic.removeLast({ typeName: 'Loading' })
-    await this.cuic.append(new Text({ text, speaker: 'duck' }))
+  async loadingAndSpeak (text) {
+    let duck = this.cuic.getSpeaker('duck')
+    await duck.speakAndThenRemove(new Loading(), { duration: 500 })
+    await duck.speak(new Text({ text }))
   }
 }

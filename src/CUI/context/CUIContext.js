@@ -27,6 +27,23 @@ export default class CUIContext {
     this.$CUI.setState({ _speakers })
   }
 
+  getSpeaker (speakerId) {
+    // let { _speakers } = this.$CUI.state
+    // let _speaker = _speakers[id]
+    return {
+      speak: async (speakAble) => {
+        speakAble.speaker = speakerId
+        await this.append(speakAble)
+      },
+      speakAndThenRemove: async (speakAble, { duration }) => {
+        speakAble.speaker = speakerId
+        await this.append(speakAble)
+        await this.waitFor({ duration })
+        await this.removeById(speakAble.id)
+      }
+    }
+  }
+
   // 添加 AppendAble 到 cui
   async append (appendAble) {
     await this.$CUI._append(appendAble)
@@ -41,6 +58,25 @@ export default class CUIContext {
     coverItems.push(coverAble)
     this.$CUI.setState({ coverItems })
     return this
+  }
+
+  // 移除指定 id 的 AppendAble 或 CoverAble 节点
+  async removeById (id) {
+    // AppendAble
+    let { appendItems } = this.$CUI.state
+    let idx = _array.findLastIndex(appendItems, (x) => {
+      return x.id === id
+    })
+    _array.pullAt(appendItems, idx)
+    this.$CUI.setState({ appendItems })
+
+    // CoverAble
+    let { coverItems } = this.$CUI.state
+    let idy = _array.findLastIndex(coverItems, (x) => {
+      return x.id === id
+    })
+    _array.pullAt(coverItems, idy)
+    this.$CUI.setState({ coverItems })
   }
 
   // 移除最后一个符合条件的 AppendAble 节点

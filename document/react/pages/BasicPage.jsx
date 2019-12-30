@@ -11,6 +11,18 @@ duck cui 提供了 cui 所需的各种基本组件，开发者可以自由组合
 利用 duck cui, 可以比较容易地实现类似下面这样的呈现效果。  
 用到了 Loading, Text, Tip  
 
+\`\`\`javascript
+async loadingAndSpeak (text) {
+  let duck = this.cuic.getSpeaker('duck')
+  await duck.speakAndThenRemove(new Loading(), { duration: 500 })
+  await duck.speak(new Text({ text }))
+}
+
+async demo () {
+  await this.loadingAndSpeak('你好，我是小黄鸭鸭')
+}
+\`\`\`
+
 <Demo />
 `
 
