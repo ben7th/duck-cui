@@ -7,6 +7,7 @@ import ClassNames from 'classnames/bind'
 
 export default buildCoverAble({
   typeName: 'MultiChoices',
+  events: ['send'],
   component: class extends React.Component {
     render () {
       let { selectedFlags, selectedItems } = this.state
@@ -33,7 +34,10 @@ export default buildCoverAble({
           <button 
             className={ css.send }
             disabled={ selectedItems.length === 0 }
-            onClick={ async evt => await this._send() }
+            onClick={ async evt => {
+              let { selectedItems } = this.state
+              await this._send({ selectedItems }) 
+            } }
           ><FontIcon icon='send' /></button>
         </div>
       </div>
@@ -65,14 +69,7 @@ export default buildCoverAble({
         }
       })
 
-      // console.log({ selectedFlags, selectedIndexes, selectedItems })
-
       this.setState({ selectedFlags, selectedIndexes, selectedItems })
-    }
-
-    async _send () {
-      let { selectedItems } = this.state
-      this.props._object.handle('send', { selectedItems })
     }
   }
 })

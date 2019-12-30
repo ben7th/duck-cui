@@ -4,6 +4,7 @@ import buildCoverAble from '../../interfaces/buildCoverAble'
 
 export default buildCoverAble({
   typeName: 'Choices',
+  events: ['select'],
   component: class extends React.Component {
     render () {
       let _items = this.props.items.map((x, idx) => {
@@ -19,10 +20,6 @@ export default buildCoverAble({
       return <div className={ css.Choices }>
         { _items }
       </div>
-    }
-
-    async _select (x) {
-      this.props._object.handle('select', x)
     }
   }
 })

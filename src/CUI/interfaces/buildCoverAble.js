@@ -4,11 +4,22 @@ export default ({ typeName, component, events }) => {
       this.props = props || {}
       this.props._object = this
       this.eventHandlers = {}
+
+      this._initComponent()
+    }
+
+    _initComponent () {
+      events.forEach(evtName => {
+        component.prototype[`_${evtName}`] = (params) => {
+          this.handle(evtName, params)
+        }
+      })
+      this.component = component
+      this.events = events
     }
 
     base = 'CoverAble'
     typeName = typeName
-    component = component
 
     on (eventName, func) {
       this.eventHandlers[eventName] = func

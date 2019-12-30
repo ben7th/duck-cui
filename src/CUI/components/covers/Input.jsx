@@ -8,6 +8,7 @@ import buildCoverAble from '../../interfaces/buildCoverAble'
 
 export default buildCoverAble({
   typeName: 'Input',
+  events: ['send'],
   component: class extends React.Component {
     render () {
       let { placeholder, maxRows } = this.props
@@ -30,7 +31,10 @@ export default buildCoverAble({
           <button 
             disabled={ this.state.value.length === 0 }
             className={ css.send }
-            onClick={ async evt => await this._send() }
+            onClick={ async evt => {
+              let { value } = this.state
+              await this._send({ value })
+            } }
           ><FontIcon icon='send' /></button>
         </div>
       </div>
@@ -38,10 +42,6 @@ export default buildCoverAble({
 
     state = {
       value: ''
-    }
-
-    async _send () {
-      this.props._object.handle('send', { value: this.state.value })
     }
 
     async clear () {

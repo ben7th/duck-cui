@@ -7,20 +7,21 @@ import Picker from 'rmc-picker/lib/Picker'
 
 export default buildCoverAble({
   typeName: 'Picker',
+  events: ['send'],
   component: class extends React.Component {
     render () {
       let { data } = this.props
       return <div className={ css.Picker }>
         <DuckPicker data={ data } ref={ node => this.picker = node } />
-        <div className={ css.bar } onClick={ evt => this.handleClick() }>
-          <button className={ css.sendBtn }>确定</button>
+        <div className={ css.bar }>
+          <button className={ css.sendBtn } 
+            onClick={ evt => {
+              let value = this.picker.getValue()
+              this._send(value)
+            } 
+          }>确定</button>
         </div>
       </div>
-    }
-
-    handleClick () {
-      let value = this.picker.getValue()
-      this.props._object.handle('send', value)
     }
   }
 })
