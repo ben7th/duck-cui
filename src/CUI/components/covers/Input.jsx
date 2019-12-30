@@ -22,7 +22,8 @@ export default buildCoverAble({
             onChange={ evt => this.setState({ value: evt.target.value }) }
             onKeyDown={ async evt => {
               if (evt.keyCode === 13 && (evt.ctrlKey || evt.metaKey)) {
-                await this._send()
+                let { value } = this.state
+                await this._send({ value })
               }
             }}
           />

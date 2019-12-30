@@ -36,6 +36,7 @@
     "prismjs": "^1.17.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-image": "^2.2.2",
     "react-player": "^1.14.2",
     "react-router-dom": "^5.1.2",
     "react-scroll": "^1.7.14",

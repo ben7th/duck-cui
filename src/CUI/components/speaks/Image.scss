@@ -1,11 +1,29 @@
+@import '../css/vars';
+
 .Image {
-  img {
-    max-width: 100%;
-    display: block;
+  &.loading {
+    background-color: #fff;
+    padding: $ChatBubblePadding;
+    display: flex;
+    .ig {
+      margin-right: .5rem;
+      color: #666;
+    }
+    .ld {
+      color: orange;
+      animation: spin 1s infinite linear;
+    }
   }
 
-  cursor: pointer;
-  &:hover {
-    opacity: 0.8;
+  &.loaded {
+    img {
+      max-width: 100%;
+      display: block;
+    }
+  
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }

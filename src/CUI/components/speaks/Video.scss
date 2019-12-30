@@ -1,15 +1,5 @@
 @import '../css/vars';
 
-@keyframes spin {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .Video {
   position: relative;
 
@@ -22,8 +12,15 @@
     padding: $ChatBubblePadding;
     display: flex;
     .loading {
-      color: orange;
-      animation: spin 1s infinite linear;
+      display: flex;
+      .vd {
+        margin-right: .5rem;
+        color: #666;
+      }
+      .ld {
+        color: orange;
+        animation: spin 1s infinite linear;
+      }
     }
   }
 
@@ -67,7 +64,7 @@
     &:before {
       content: '';
       position: absolute;
-      width: 6px; height: 24px;
+      width: 6px; height: 28px;
       background-color: #fff;
       margin: auto; top: 0; left: 0; right: 12px; bottom: 0;
     }
@@ -75,7 +72,7 @@
     &:after {
       content: '';
       position: absolute;
-      width: 6px; height: 24px;
+      width: 6px; height: 28px;
       background-color: #fff;
       margin: auto; top: 0; left: 12px; right: 0; bottom: 0;
     }

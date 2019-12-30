@@ -8,8 +8,11 @@ import Scroll from 'react-scroll'
 import _array from 'lodash/array'
 
 export default class CUIContext {
-  constructor ({ $CUI }) {
+  constructor ({ $CUI, options = {} }) {
     this.$CUI = $CUI
+
+    this.options = {}
+    this.options.autoScrollBottom = !!options.autoScrollBottom
   }
 
   // 设置背景内容
@@ -26,10 +29,10 @@ export default class CUIContext {
 
   // 添加 AppendAble 到 cui
   async append (appendAble) {
-    let { appendItems } = this.$CUI.state
-    appendItems.push(appendAble)
-    this.$CUI.setState({ appendItems })
-    return this
+    await this.$CUI._append(appendAble)
+    if (this.options.autoScrollBottom) {
+      this._scrollToBottom()
+    }
   }
 
   // 添加 CoverAble 到 cui
@@ -90,9 +93,7 @@ export default class CUIContext {
   }
 
   _scrollToBottom () {
-    let scroller = Scroll.animateScroll
-    // console.log(scroller)
-    scroller.scrollToBottom({
+    Scroll.animateScroll.scrollToBottom({
       containerId: 'MRI-Scroller',
       duration: 100
     })

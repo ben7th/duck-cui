@@ -77,3 +77,14 @@ $PickerSendBtnPadding: $base * 0.5 $base * 1;
 $PickerSendBtnFontSize: $base;
 $PickerBorderRadius: $base * 0.5;
 $PickerBoxPadding: $base * 0.3;
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

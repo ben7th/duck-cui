@@ -17,7 +17,10 @@ export default class DemoBox extends React.Component {
     return <div className={ css.DemoBox }>
       <div className={ css.phone }>
         <PhoneUI size={ this.props.size }>
-          <CUI ready={ context => this.onReady(context) } />
+          <CUI 
+            ready={ context => this.onReady(context) } 
+            options={ this.props.cuiOptions }
+          />
         </PhoneUI>
       </div>
       <div className={ css.control }>

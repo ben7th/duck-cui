@@ -33,9 +33,16 @@ export default class CUI extends React.Component {
   }
 
   componentDidMount () {
-    let context = new CUIContext({ $CUI: this })
+    let context = new CUIContext({ $CUI: this, options: this.props.options })
     if (this.props.ready) {
       this.props.ready(context)
     }
+  }
+
+  async _append (appendAble) {
+    let { appendItems } = this.state
+    appendItems.push(appendAble)
+    this.setState({ appendItems })
+    return this
   }
 }

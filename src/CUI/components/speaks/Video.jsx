@@ -17,18 +17,20 @@ export default buildSpeakAble({
         loading: !ready
       })
 
-      let _loadingIcon = ready ? null : 
-        <div className={ css.loading }><FontIcon icon='loading' /></div>
+      let _loadingIcon = <div className={ css.loading }>
+        <FontIcon icon='video' className={ css.vd } />
+        <FontIcon icon='loading' className={ css.ld } />
+      </div>
+        
+      let _playIcon = <div className={ css.playicon } 
+        onClick={ evt => this.play() }></div>
 
-      let _playIcon = ready ? ( 
-        playing ? null :
-          <div className={ css.playicon } onClick={ evt => this.play() }></div>
-      ) : null
+      let _pauseIcon = <div className={ css.pauseIcon } 
+        onClick={ evt => this.pause() }></div>
 
-      let _pauseIcon = ready ? (
-        playing ? 
-        <div className={ css.pauseIcon } onClick={ evt => this.pause() }></div> : null
-      ) : null
+      let _show = ready ? (
+        playing ? _pauseIcon : _playIcon
+      ) : _loadingIcon
 
       return <div className={ className }>
         <ReactPlayer 
@@ -40,9 +42,7 @@ export default buildSpeakAble({
           onReady={ evt => this.ready() }
           onEnded={ evt => this.ended() }
         />
-        { _loadingIcon }
-        { _playIcon }
-        { _pauseIcon }
+        { _show }
       </div>
     }
 
@@ -71,18 +71,5 @@ export default buildSpeakAble({
     ended () {
       this.setState({ playing: false })
     }
-
-    // handleBoxClick () {
-    //   let { playing } = this.state
-
-    //   if (playing === true ) {
-    //     this.setState({ playing: false })
-    //     this.$player.seekTo(0)
-    //   }
-
-    //   if (playing === false) {
-    //     this.setState({ playing: true })
-    //   }
-    // }
   }
 })
