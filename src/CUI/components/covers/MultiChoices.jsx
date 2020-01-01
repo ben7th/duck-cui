@@ -35,8 +35,8 @@ export default buildCoverAble({
             className={ css.send }
             disabled={ selectedItems.length === 0 }
             onClick={ async evt => {
-              let { selectedItems } = this.state
-              await this._send({ selectedItems }) 
+              let { selectedItems, selectedIndexes, selectedFlags } = this.state
+              await this._send({ selectedItems, selectedIndexes, selectedFlags }) 
             } }
           ><FontIcon icon='send' /></button>
         </div>

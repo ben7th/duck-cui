@@ -1,6 +1,9 @@
+import uuidv1 from 'uuid/v1'
+
 export default ({ typeName, component, events }) => {
   return class {
     constructor (props) {
+      this.id = uuidv1()
       this.props = props || {}
       this.props._object = this
       this.eventHandlers = {}
