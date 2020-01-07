@@ -1,7 +1,7 @@
 import React from 'react'
 
 import DemoBox from './components/DemoBox'
-import DemoButton from './components/DemoButton'
+// import DemoButton from './components/DemoButton'
 
 import adapter from './adapter'
 const { Speaks, Covers } = adapter
@@ -26,8 +26,6 @@ export default class DemoBasic extends React.Component {
   }
 
   async demo () {
-    await this.cuic.removeAll()
-
     await this.loadingAndSpeak({ text: '小鸭可以帮你查询天气' })
     await this.loadingAndSpeak({ text: '输入城市名喔' })
 
@@ -47,14 +45,16 @@ export default class DemoBasic extends React.Component {
   }
 
   async loadingAndSpeak ({ text }) {
-    await this.cuic.append(new Loading({ speaker: 'duck' }))
+    let loading = new Loading({ speaker: 'duck' })
+    await this.cuic.append(loading)
     await this.cuic.waitFor({ duration: 500 })
-    await this.cuic.removeLast({ typeName: 'Loading' })
+    await loading.remove()
     await this.cuic.append(new Text({ text, speaker: 'duck' }))
   }
 
   async queryWeather ({ location }) {
-    await this.cuic.append(new Loading({ speaker: 'duck' }))
+    let loading = new Loading({ speaker: 'duck' })
+    await this.cuic.append(loading)
 
     let p = Promise.all([ 
       getForecast({ location }),
@@ -64,7 +64,7 @@ export default class DemoBasic extends React.Component {
     let data = res[0].HeWeather6
     console.log(data)
 
-    await this.cuic.removeLast({ typeName: 'Loading' })
+    await loading.remove()
 
     if (data[0].status === 'unknown location') {
       await this.cuic.append(new Text({ text: `没有查到 ${location} 这个城市喔`, speaker: 'duck' }))
@@ -86,9 +86,10 @@ export default class DemoBasic extends React.Component {
 
       console.log(d)
 
-      await this.cuic.append(new Loading({ speaker: 'duck' }))
+      let loading = new Loading({ speaker: 'duck' })
+      await this.cuic.append(loading)
       await this.cuic.waitFor({ duration: 500 })
-      await this.cuic.removeLast({ typeName: 'Loading' })
+      await loading.remove()
       await this.cuic.append(new Text({ 
         markdown: `${d.join('\n')}`, speaker: 'duck' 
       }))

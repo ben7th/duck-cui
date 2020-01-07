@@ -23,5 +23,9 @@ export default ({ typeName, component }) => {
     side = 'remote'
     typeName = typeName
     component = component
+
+    remove () {
+      this.$cuic.removeById(this.id)
+    }
   }
 }

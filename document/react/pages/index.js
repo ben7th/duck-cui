@@ -12,6 +12,8 @@ import PickerPage from './PickerPage'
 import VideoPage from './VideoPage'
 import WeatherPage from './WeatherPage'
 import BackgroundLayerPage from './BackgroundLayerPage'
+import CUICPage from './CUICPage'
+import CUINodePage from './CUINodePage'
 
 export default {
   IntroPage,
@@ -28,4 +30,6 @@ export default {
   WeatherPage,
   BackgroundLayerPage,
   MultiChoicesPage,
+  CUICPage,
+  CUINodePage,
 }

@@ -11,8 +11,10 @@ const indexData = [
     { title: '基本对话', path: '/basic', component: pages.BasicPage },
     { title: '天气查询', path: '/advanced/weather', component: pages.WeatherPage }
   ] },
-  { title: '组件', children: [
+  { title: 'CUI & CUIContext', path: '/cuic', component: pages.CUICPage, children: [
     { title: 'BackgroundLayer', path: '/BackgroundLayer', component: pages.BackgroundLayerPage },
+  ] },
+  { title: '组件 CUINode', path: '/CUINode', component: pages.CUINodePage, children: [
     { title: 'AppendAble', children: [
       { title: 'Tip', path: '/AppendAble/Tip', component: pages.TipPage },
       { title: 'SpeakAble', children: [

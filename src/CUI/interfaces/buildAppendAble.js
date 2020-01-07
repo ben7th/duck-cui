@@ -7,5 +7,9 @@ export default ({ typeName, component }) => {
     base = 'AppendAble'
     typeName = typeName
     component = component
+
+    remove () {
+      this.$cuic.removeById(this.id)
+    }
   }
 }

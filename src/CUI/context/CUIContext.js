@@ -47,6 +47,7 @@ export default class CUIContext {
   // 添加 AppendAble 到 cui
   async append (appendAble) {
     await this.$CUI._append(appendAble)
+    appendAble.$cuic = this
     if (this.options.autoScrollBottom) {
       this._scrollToBottom()
     }
@@ -57,6 +58,7 @@ export default class CUIContext {
     let { coverItems } = this.$CUI.state
     coverItems.push(coverAble)
     this.$CUI.setState({ coverItems })
+    coverAble.$cuic = this
     return this
   }
 
@@ -81,6 +83,7 @@ export default class CUIContext {
 
   // 移除最后一个符合条件的 AppendAble 节点
   async removeLast ({ typeName }) {
+    console.warn('removeLast 此方法将在 1.0 版本废弃')
     let { appendItems } = this.$CUI.state
     let idx = _array.findLastIndex(appendItems, (x) => {
       if (!typeName) { return true }
@@ -92,6 +95,7 @@ export default class CUIContext {
 
   // 移除所有符合条件的 AppendAble 节点
   async removeAll (condition) {
+    console.warn('removeAll 此方法将在 1.0 版本废弃')
     let { appendItems } = this.$CUI.state
 
     if (condition) {
@@ -119,6 +123,7 @@ export default class CUIContext {
 
   // 移除一个 CoverAble 节点
   async removeCoverAble ({ typeName }) {
+    console.warn('removeCoverAble 此方法将在 1.0 版本废弃')
     let { coverItems } = this.$CUI.state
     let idx = _array.findLastIndex(coverItems, (x) => {
       if (!typeName) { return true }

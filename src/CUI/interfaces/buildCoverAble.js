@@ -35,5 +35,9 @@ export default ({ typeName, component, events }) => {
         func(evt)
       }
     }
+
+    remove () {
+      this.$cuic.removeById(this.id)
+    }
   }
 }

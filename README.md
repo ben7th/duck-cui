@@ -1,6 +1,17 @@
 # duck cui
 
-## 迭代记录
+## 迭代记录 Changelog
+
+### 2020-01-08
+
+- 实现组件的 remove() 方法
+
+### 2020-01-07
+
+- 实现 CUI options autoScrollBottom
+- 实现 Speaker 机制
+- 实现 cuic.removeById(id)
+- 修改相关文档
 
 ### 2019-12-29
 

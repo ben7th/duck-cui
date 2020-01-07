@@ -35,6 +35,7 @@ export default class extends React.Component {
       await this.cuic.append(new Text({ text: value, speaker: 'slime' }))
       await input.$context.clear()
       await this.cuic.append(new Text({ text: '好鸭', speaker: 'duck' }))
+      // await input.remove()
     })
 
     await this.cuic.cover(input)

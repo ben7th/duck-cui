@@ -12,10 +12,10 @@ Input 用来支持文字输入。此组件固定在屏幕下方出现，组件�
 
 ## Props
 
-|Prop|Type|Description|
-|-|-|-|
-|\`placeholder\`|\`String\`|输入框显示的占位文字|
-|\`maxRows\`|\`Integer\`|最大行数（超过后会滚动）|
+|Prop|Type|Default|Description|
+|-|-|-|-|
+|\`placeholder\`|\`String\`|""|输入框显示的占位文字|
+|\`maxRows\`|\`Integer\`||最大行数（超过后会滚动）|
 
 ## 默认键盘快捷键
 
